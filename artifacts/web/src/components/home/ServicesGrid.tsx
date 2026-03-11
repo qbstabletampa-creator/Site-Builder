@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { ArrowRight, Check } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface ServiceCardProps {
   title: string;
@@ -7,12 +8,19 @@ interface ServiceCardProps {
   cta: string;
   ctaLink: string;
   imageColor: string;
+  index: number;
 }
 
-function ServiceCard({ title, items, cta, ctaLink, imageColor }: ServiceCardProps) {
+function ServiceCard({ title, items, cta, ctaLink, imageColor, index }: ServiceCardProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-b border-black/10 last:border-b-0">
-      <div className="relative aspect-[4/3] md:aspect-auto overflow-hidden bg-black/5">
+    <motion.div
+      className="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-sm overflow-hidden"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.7, delay: index * 0.15 }}
+    >
+      <div className="relative aspect-[4/3] md:aspect-auto overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center" style={{ backgroundColor: imageColor }}>
           <div className="absolute inset-0 bg-black/40" />
           <div className="relative z-10 border border-white/20 px-4 py-2">
@@ -51,24 +59,31 @@ function ServiceCard({ title, items, cta, ctaLink, imageColor }: ServiceCardProp
           <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 export default function ServicesGrid() {
   return (
-    <section className="w-full bg-white py-16 md:py-20">
-      <p className="text-center text-gold text-xs uppercase tracking-[0.3em] font-sans font-semibold mb-12">
+    <section className="w-full bg-white py-16 md:py-24">
+      <motion.p
+        className="text-center text-gold text-xs uppercase tracking-[0.3em] font-sans font-semibold mb-14"
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         Stable Services
-      </p>
+      </motion.p>
 
-      <div className="max-w-6xl mx-auto border-t border-black/10">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 space-y-12 md:space-y-16">
         <ServiceCard
           title="Elite Development"
           items={["QB Academy", "1 on 1 + Elite Small Groups", "NFL Draft Prep", "College + NFL Training"]}
           cta="Apply for Evaluation"
           ctaLink="/academy"
           imageColor="#1a2a3a"
+          index={0}
         />
         <ServiceCard
           title="Collegiate Exposure"
@@ -76,6 +91,7 @@ export default function ServicesGrid() {
           cta="Request Highlight Assessment"
           ctaLink="/exposure"
           imageColor="#2a3a2a"
+          index={1}
         />
         <ServiceCard
           title="Strategic Consulting"
@@ -83,6 +99,7 @@ export default function ServicesGrid() {
           cta="Schedule Indy Audit"
           ctaLink="/consulting"
           imageColor="#3a2a1a"
+          index={2}
         />
       </div>
     </section>

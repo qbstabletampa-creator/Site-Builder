@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const faqs = [
   {
@@ -29,7 +30,13 @@ function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
   const panelId = `faq-panel-${index}`;
   const buttonId = `faq-btn-${index}`;
   return (
-    <div className="border-b border-black/10">
+    <motion.div
+      className="border-b border-black/5"
+      initial={{ opacity: 0, y: 15 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.06 }}
+    >
       <button
         id={buttonId}
         className="w-full flex items-center justify-between py-5 md:py-6 text-left"
@@ -40,7 +47,7 @@ function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
         <span className="font-serif text-base md:text-lg font-medium text-black pr-4">{q}</span>
         <ChevronDown
           size={20}
-          className={`flex-shrink-0 text-black/40 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+          className={`flex-shrink-0 text-black/30 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
         />
       </button>
       <div
@@ -51,9 +58,9 @@ function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
           open ? "max-h-40 pb-5" : "max-h-0"
         }`}
       >
-        <p className="text-sm text-black/60 leading-relaxed font-sans pr-8">{a}</p>
+        <p className="text-sm text-black/55 leading-relaxed font-sans pr-8">{a}</p>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -62,10 +69,16 @@ export default function FaqIntake() {
     <>
       <section className="w-full bg-white py-16 md:py-20 px-6 md:px-10">
         <div className="max-w-3xl mx-auto">
-          <p className="text-center text-gold text-xs uppercase tracking-[0.3em] font-sans font-semibold mb-12">
+          <motion.p
+            className="text-center text-gold text-xs uppercase tracking-[0.3em] font-sans font-semibold mb-12"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             Frequently Asked Questions
-          </p>
-          <div className="border-t border-black/10">
+          </motion.p>
+          <div className="border-t border-black/5">
             {faqs.map((faq, i) => (
               <FaqItem key={faq.q} {...faq} index={i} />
             ))}
@@ -75,14 +88,33 @@ export default function FaqIntake() {
 
       <section id="intake" className="w-full bg-black py-16 md:py-24 px-6 md:px-10">
         <div className="max-w-2xl mx-auto">
-          <p className="text-center text-gold text-xs uppercase tracking-[0.3em] font-sans font-semibold mb-4">
+          <motion.p
+            className="text-center text-gold text-xs uppercase tracking-[0.3em] font-sans font-semibold mb-4"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             Begin Your Evaluation
-          </p>
-          <h2 className="font-serif text-3xl md:text-4xl text-white text-center mb-12">
+          </motion.p>
+          <motion.h2
+            className="font-serif text-3xl md:text-4xl text-white text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             Intake Application
-          </h2>
+          </motion.h2>
 
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+          <motion.form
+            className="space-y-6"
+            onSubmit={(e) => e.preventDefault()}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="intake-name" className="sr-only">Full Name</label>
@@ -90,7 +122,7 @@ export default function FaqIntake() {
                   id="intake-name"
                   type="text"
                   placeholder="Full Name"
-                  className="w-full bg-transparent border border-white/20 text-white text-sm px-4 py-3 font-sans placeholder:text-white/30 focus:border-gold focus:outline-none transition-colors"
+                  className="w-full bg-transparent border border-white/15 text-white text-sm px-4 py-3 font-sans placeholder:text-white/25 focus:border-gold focus:outline-none transition-colors"
                 />
               </div>
               <div>
@@ -99,7 +131,7 @@ export default function FaqIntake() {
                   id="intake-email"
                   type="email"
                   placeholder="Email Address"
-                  className="w-full bg-transparent border border-white/20 text-white text-sm px-4 py-3 font-sans placeholder:text-white/30 focus:border-gold focus:outline-none transition-colors"
+                  className="w-full bg-transparent border border-white/15 text-white text-sm px-4 py-3 font-sans placeholder:text-white/25 focus:border-gold focus:outline-none transition-colors"
                 />
               </div>
             </div>
@@ -110,7 +142,7 @@ export default function FaqIntake() {
                   id="intake-phone"
                   type="tel"
                   placeholder="Phone Number"
-                  className="w-full bg-transparent border border-white/20 text-white text-sm px-4 py-3 font-sans placeholder:text-white/30 focus:border-gold focus:outline-none transition-colors"
+                  className="w-full bg-transparent border border-white/15 text-white text-sm px-4 py-3 font-sans placeholder:text-white/25 focus:border-gold focus:outline-none transition-colors"
                 />
               </div>
               <div>
@@ -119,7 +151,7 @@ export default function FaqIntake() {
                   id="intake-position"
                   type="text"
                   placeholder="Position"
-                  className="w-full bg-transparent border border-white/20 text-white text-sm px-4 py-3 font-sans placeholder:text-white/30 focus:border-gold focus:outline-none transition-colors"
+                  className="w-full bg-transparent border border-white/15 text-white text-sm px-4 py-3 font-sans placeholder:text-white/25 focus:border-gold focus:outline-none transition-colors"
                 />
               </div>
             </div>
@@ -130,7 +162,7 @@ export default function FaqIntake() {
                   id="intake-school"
                   type="text"
                   placeholder="School / Organization"
-                  className="w-full bg-transparent border border-white/20 text-white text-sm px-4 py-3 font-sans placeholder:text-white/30 focus:border-gold focus:outline-none transition-colors"
+                  className="w-full bg-transparent border border-white/15 text-white text-sm px-4 py-3 font-sans placeholder:text-white/25 focus:border-gold focus:outline-none transition-colors"
                 />
               </div>
               <div>
@@ -139,7 +171,7 @@ export default function FaqIntake() {
                   id="intake-gradyear"
                   type="text"
                   placeholder="Graduation Year"
-                  className="w-full bg-transparent border border-white/20 text-white text-sm px-4 py-3 font-sans placeholder:text-white/30 focus:border-gold focus:outline-none transition-colors"
+                  className="w-full bg-transparent border border-white/15 text-white text-sm px-4 py-3 font-sans placeholder:text-white/25 focus:border-gold focus:outline-none transition-colors"
                 />
               </div>
             </div>
@@ -149,7 +181,7 @@ export default function FaqIntake() {
                 id="intake-goals"
                 rows={4}
                 placeholder="Tell us about your goals..."
-                className="w-full bg-transparent border border-white/20 text-white text-sm px-4 py-3 font-sans placeholder:text-white/30 focus:border-gold focus:outline-none transition-colors resize-none"
+                className="w-full bg-transparent border border-white/15 text-white text-sm px-4 py-3 font-sans placeholder:text-white/25 focus:border-gold focus:outline-none transition-colors resize-none"
               />
             </div>
 
@@ -160,7 +192,7 @@ export default function FaqIntake() {
               Submit Application
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </button>
-          </form>
+          </motion.form>
         </div>
       </section>
     </>

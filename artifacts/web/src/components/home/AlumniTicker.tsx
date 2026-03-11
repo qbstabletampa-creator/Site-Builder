@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const teams = [
   { name: "Steelers", color: "#FFB612", bg: "#101820" },
   { name: "Falcons", color: "#A71930", bg: "#000000" },
@@ -25,7 +27,13 @@ export default function AlumniTicker() {
   const doubled = [...teams, ...teams];
 
   return (
-    <section className="w-full bg-white py-10 md:py-14 overflow-hidden">
+    <motion.section
+      className="w-full bg-white py-10 md:py-14 overflow-hidden"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="relative">
         <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-white to-transparent z-10" />
         <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-white to-transparent z-10" />
@@ -37,9 +45,15 @@ export default function AlumniTicker() {
         </div>
       </div>
 
-      <p className="text-center mt-8 text-xs uppercase tracking-[0.25em] text-black/70 font-sans font-semibold">
+      <motion.p
+        className="text-center mt-8 text-xs uppercase tracking-[0.25em] text-black/60 font-sans font-semibold"
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
         Trusted by the Best
-      </p>
-    </section>
+      </motion.p>
+    </motion.section>
   );
 }

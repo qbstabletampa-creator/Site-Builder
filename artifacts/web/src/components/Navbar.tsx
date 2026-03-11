@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence, useScroll } from "framer-motion";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -12,72 +13,86 @@ const navLinks = [
 
 export default function Navbar() {
   const [location] = useLocation();
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    return scrollYProgress.on("change", (v) => setProgress(v));
+  }, [scrollYProgress]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16 md:h-20">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-white font-serif text-lg md:text-xl font-bold tracking-wide">THE QB STABLE</span>
-        </Link>
-
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`text-xs uppercase tracking-[0.2em] transition-colors ${
-                location === link.href
-                  ? "text-gold"
-                  : "text-white/70 hover:text-white"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
-
-        <Link
-          href="/#intake"
-          className="hidden md:inline-flex items-center gap-2 bg-gold text-black text-xs uppercase tracking-[0.15em] font-semibold px-5 py-2.5 hover:bg-gold-light transition-colors"
-        >
-          Apply Now
-        </Link>
-
-        <button
-          className="md:hidden text-white p-2"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+    <>
+      <div className="fixed top-0 left-0 right-0 z-50 h-[2px] bg-white/5">
+        <motion.div
+          className="h-full bg-gold origin-center shadow-[0_0_10px_rgba(212,175,55,0.5)]"
+          style={{ scaleX: progress }}
+        />
       </div>
 
-      {mobileOpen && (
-        <div className="md:hidden bg-black border-t border-white/10">
-          <div className="px-6 py-4 flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-sm uppercase tracking-[0.15em] ${
-                  location === link.href ? "text-gold" : "text-white/70"
-                }`}
-                onClick={() => setMobileOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              href="/#intake"
-              className="bg-gold text-black text-sm uppercase tracking-[0.15em] font-semibold px-5 py-3 text-center mt-2"
-              onClick={() => setMobileOpen(false)}
+      <button
+        className="fixed top-3 right-5 md:right-8 z-50 text-gold/80 hover:text-gold transition-colors p-2"
+        onClick={() => setMenuOpen(true)}
+        aria-label="Open menu"
+      >
+        <Menu size={26} strokeWidth={1.5} />
+      </button>
+
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex flex-col items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+          >
+            <button
+              className="absolute top-3 right-5 md:right-8 text-white/80 hover:text-white transition-colors p-2"
+              onClick={() => setMenuOpen(false)}
+              aria-label="Close menu"
             >
-              Apply Now
-            </Link>
-          </div>
-        </div>
-      )}
-    </nav>
+              <X size={28} strokeWidth={1.5} />
+            </button>
+
+            <nav className="flex flex-col items-center gap-8">
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + i * 0.06, duration: 0.4 }}
+                >
+                  <Link
+                    href={link.href}
+                    className={`font-serif text-2xl md:text-3xl tracking-wide transition-colors ${
+                      location === link.href
+                        ? "text-gold"
+                        : "text-white/70 hover:text-white"
+                    }`}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 + navLinks.length * 0.06, duration: 0.4 }}
+              >
+                <Link
+                  href="/#intake"
+                  className="mt-4 inline-flex items-center gap-2 bg-gold text-black text-xs uppercase tracking-[0.2em] font-semibold px-8 py-3 hover:bg-gold-light transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Apply Now
+                </Link>
+              </motion.div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }

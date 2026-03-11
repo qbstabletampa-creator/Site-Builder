@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const standards = [
   {
     title: "Neural Plasticity",
@@ -19,24 +21,34 @@ const standards = [
 
 export default function StableStandard() {
   return (
-    <section className="w-full bg-white py-16 md:py-20">
-      <p className="text-center text-gold text-xs uppercase tracking-[0.3em] font-sans font-semibold mb-12">
+    <section className="w-full bg-white py-16 md:py-24">
+      <motion.p
+        className="text-center text-gold text-xs uppercase tracking-[0.3em] font-sans font-semibold mb-14"
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         The Stable Standard
-      </p>
+      </motion.p>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 border-t border-l border-black/10">
-        {standards.map((item) => (
-          <div
+      <div className="max-w-6xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        {standards.map((item, i) => (
+          <motion.div
             key={item.title}
-            className="border-r border-b border-black/10 p-10 md:p-[60px] text-left"
+            className="p-8 md:p-10 bg-black/[0.02] rounded-sm"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6, delay: i * 0.1 }}
           >
             <h3 className="font-serif text-xl md:text-2xl font-semibold text-black mb-4">
               {item.title}
             </h3>
-            <p className="text-sm text-black/60 leading-relaxed font-sans">
+            <p className="text-sm text-black/55 leading-relaxed font-sans">
               {item.description}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
