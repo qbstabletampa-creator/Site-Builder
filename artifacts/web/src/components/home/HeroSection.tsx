@@ -9,7 +9,7 @@ export default function HeroSection() {
   const [videoReady, setVideoReady] = useState(false);
 
   return (
-    <section className="relative w-full min-h-[100vh] md:min-h-[800px] flex flex-col items-center justify-end overflow-hidden">
+    <section className="relative w-full min-h-[100vh] md:min-h-[800px] flex flex-col items-center justify-center overflow-hidden">
       <Link
         href="/"
         className="absolute top-3 left-1/2 -translate-x-1/2 z-30"
@@ -40,13 +40,13 @@ export default function HeroSection() {
             className="absolute inset-0 w-full h-full object-cover"
           />
         )}
-        <div className="absolute inset-0 bg-[#2a4a6b]/60 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30" />
+        <div className="absolute inset-0 bg-[#2a4a6b]/35 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/15" />
       </div>
 
-      <div className="relative z-10 w-full px-6 md:px-10 pb-16 md:pb-24 text-center">
+      <div className="relative z-10 w-full px-4 md:px-10 translate-y-[10%] text-center">
         <motion.h1
-          className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[0.95] tracking-tight"
+          className="font-serif text-[clamp(1.65rem,7vw,7rem)] font-bold text-white leading-[0.95] tracking-tight whitespace-nowrap"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
