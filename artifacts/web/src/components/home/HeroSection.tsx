@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import heroImage from "@assets/Screenshot_2026-03-11_172752_1773264570462.png";
+import heroImage from "@assets/IMG_2130_1773271236127.jpeg";
 import heroVideo from "@assets/hero-video.mp4";
 import stableLogo from "@assets/stable-logo.png";
 import { Link } from "wouter";
@@ -36,7 +36,7 @@ export default function HeroSection() {
         {!videoReady && (
           <img
             src={heroImage}
-            alt="QB Training Session"
+            alt="Quarterback training session on the field at Beyond The Throw"
             className="absolute inset-0 w-full h-full object-cover"
           />
         )}
