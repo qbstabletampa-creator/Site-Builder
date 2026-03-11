@@ -45,11 +45,11 @@ const logos = [
 
 function LogoItem({ name, src }: { name: string; src: string }) {
   return (
-    <div className="flex-shrink-0 mx-5 md:mx-8 flex items-center justify-center w-14 h-14 md:w-16 md:h-16">
+    <div className="flex-shrink-0 mx-4 md:mx-6 flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-white border border-black/5 shadow-sm overflow-hidden p-2 md:p-2.5">
       <img
         src={src}
         alt={name}
-        className="max-h-10 md:max-h-14 max-w-14 md:max-w-16 w-auto h-auto object-contain"
+        className="w-full h-full object-contain"
         loading="lazy"
       />
     </div>
