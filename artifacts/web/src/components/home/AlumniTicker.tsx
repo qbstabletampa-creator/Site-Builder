@@ -21,6 +21,14 @@ import indianaLogo from "@assets/logos/indiana_clean.png";
 import miamiLogo from "@assets/logos/miami.png";
 import virginiaLogo from "@assets/logos/virginia.svg";
 
+import armyLogo from "@assets/logos/army.svg";
+import bostonCollegeLogo from "@assets/logos/boston-college.png";
+import charlotteLogo from "@assets/logos/charlotte.svg";
+import newMexicoStateLogo from "@assets/logos/new-mexico-state.svg";
+import southAlabamaLogo from "@assets/logos/south-alabama.png";
+import unlvLogo from "@assets/logos/unlv.png";
+import navyLogo from "@assets/logos/navy.png";
+
 const logos = [
   { name: "Atlanta Falcons", src: falconsLogo },
   { name: "Kansas City Chiefs", src: chiefsLogo },
@@ -41,11 +49,18 @@ const logos = [
   { name: "Indiana", src: indianaLogo },
   { name: "Miami Hurricanes", src: miamiLogo },
   { name: "Virginia", src: virginiaLogo },
+  { name: "Army", src: armyLogo },
+  { name: "Boston College", src: bostonCollegeLogo },
+  { name: "Charlotte", src: charlotteLogo },
+  { name: "New Mexico State", src: newMexicoStateLogo },
+  { name: "South Alabama", src: southAlabamaLogo },
+  { name: "UNLV", src: unlvLogo },
+  { name: "Navy", src: navyLogo },
 ];
 
 function LogoItem({ name, src }: { name: string; src: string }) {
   return (
-    <div className="flex-shrink-0 mx-4 md:mx-6 flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-white border border-black/5 shadow-sm overflow-hidden p-2 md:p-2.5">
+    <div className="flex-shrink-0 mx-4 md:mx-6 flex items-center justify-center w-16 h-16 md:w-20 md:h-20">
       <img
         src={src}
         alt={name}
