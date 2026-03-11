@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 
-import falconsLogo from "@assets/logos/falcons.png";
+import falconsLogo from "@assets/logos/falcons_clean.png";
 import chiefsLogo from "@assets/logos/chiefs.png";
-import ravensLogo from "@assets/logos/ravens.png";
+import ravensLogo from "@assets/logos/ravens_clean.png";
 import dolphinsLogo from "@assets/logos/dolphins.png";
-import texansLogo from "@assets/logos/texans.png";
-import seahawksLogo from "@assets/logos/seahawks.png";
+import texansLogo from "@assets/logos/texans_clean.png";
+import seahawksLogo from "@assets/logos/seahawks_clean.png";
 import steelersLogo from "@assets/logos/steelers.png";
-import brownsLogo from "@assets/logos/browns.png";
+import brownsLogo from "@assets/logos/browns_clean.png";
 import jetsLogo from "@assets/logos/jets.png";
 
 import pennStateLogo from "@assets/logos/penn-state.png";
