@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { ArrowRight, Check } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 const features = [
   {
@@ -30,6 +31,10 @@ const included = [
 ];
 
 export default function Exposure() {
+  useSEO({
+    title: "Collegiate Exposure | QB Recruiting & Highlights — The QB Stable",
+    description: "Custom highlight reels, college coach database access, recruiting evaluations, and NIL strategy. 40+ D1 QBs produced. Get seen by the right programs.",
+  });
   return (
     <>
       <section className="relative w-full min-h-[60vh] flex items-end bg-black pt-20">

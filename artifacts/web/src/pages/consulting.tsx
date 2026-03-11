@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { ArrowRight, Check } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 const features = [
   {
@@ -30,6 +31,10 @@ const included = [
 ];
 
 export default function Consulting() {
+  useSEO({
+    title: "Strategic Consulting | Practice Architecture & Drill Design — The QB Stable",
+    description: "Quarterback biomechanics consulting and drill protocol design for coaches and programs. Indy architecture audits, reactive drill protocols, and custom program builds.",
+  });
   return (
     <>
       <section className="relative w-full min-h-[60vh] flex items-end bg-black pt-20">

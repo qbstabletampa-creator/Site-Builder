@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { ChevronDown, ArrowRight } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 const faqCategories = [
   {
@@ -126,6 +127,10 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 }
 
 export default function Faq() {
+  useSEO({
+    title: "FAQ | Quarterback Training Questions — The QB Stable",
+    description: "Everything you need to know about The QB Stable: training methodology, age groups, recruiting services, consulting programs, location, and how to get started.",
+  });
   return (
     <>
       <section className="relative w-full min-h-[50vh] flex items-end bg-black pt-20">

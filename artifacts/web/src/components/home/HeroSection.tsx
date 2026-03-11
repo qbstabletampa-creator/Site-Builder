@@ -6,10 +6,19 @@ export default function HeroSection() {
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-gold z-20" />
 
       <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster={heroImage}
+          className="w-full h-full object-cover"
+        >
+        </video>
         <img
           src={heroImage}
           alt="QB Training Session"
-          className="w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-[#2a4a6b]/60 mix-blend-multiply" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30" />

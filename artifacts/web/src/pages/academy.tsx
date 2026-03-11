@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { ArrowRight, Check } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 const features = [
   {
@@ -30,6 +31,10 @@ const included = [
 ];
 
 export default function Academy() {
+  useSEO({
+    title: "QB Academy | Elite Quarterback Training Programs — The QB Stable",
+    description: "Tampa's premier QB training programs: 1-on-1 sessions, elite small groups, NFL Draft prep, and college-level development. Science-driven methodology from first rep to first round.",
+  });
   return (
     <>
       <section className="relative w-full min-h-[60vh] flex items-end bg-black pt-20">

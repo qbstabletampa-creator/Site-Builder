@@ -6,8 +6,13 @@ import ServicesGrid from "@/components/home/ServicesGrid";
 import StableStandard from "@/components/home/StableStandard";
 import ReviewVault from "@/components/home/ReviewVault";
 import FaqIntake from "@/components/home/FaqIntake";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function Home() {
+  useSEO({
+    title: "The QB Stable | Quarterback Training Tampa, FL — Beyond the Throw",
+    description: "The QB Stable is Tampa's premier quarterback training institution. $53M+ in NFL contracts, 40+ D1 QBs. Elite development, collegiate exposure, and strategic consulting.",
+  });
   return (
     <>
       <HeroSection />
