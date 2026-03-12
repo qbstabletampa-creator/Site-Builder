@@ -1,71 +1,60 @@
 import { Link } from "wouter";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
-interface ServiceCardProps {
-  title: string;
-  items: string[];
+interface PillarCardProps {
+  headline: string;
+  subtext: string;
+  keyStat: string;
   cta: string;
   ctaLink: string;
-  imageColor: string;
+  scarcityTag?: string;
   index: number;
 }
 
-function ServiceCard({ title, items, cta, ctaLink, imageColor, index }: ServiceCardProps) {
+function PillarCard({ headline, subtext, keyStat, cta, ctaLink, scarcityTag, index }: PillarCardProps) {
   return (
     <motion.div
-      className="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-sm overflow-hidden"
+      className="relative bg-[#121212] border-t border-[#C5B358] rounded-sm flex flex-col items-center text-center px-6 py-10 md:px-8 md:py-14"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.7, delay: index * 0.15 }}
     >
-      <div className="relative aspect-[4/3] md:aspect-auto overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center" style={{ backgroundColor: imageColor }}>
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="relative z-10 border border-white/20 px-4 py-2">
-            <span className="text-white/60 text-xs uppercase tracking-[0.2em] font-sans">Training Preview</span>
-          </div>
-          <div className="absolute bottom-3 left-3 right-3 flex gap-2 z-10">
-            <div className="bg-black/60 backdrop-blur-sm px-2 py-1 text-[9px] text-white/80 font-mono uppercase">
-              HUD Active
-            </div>
-            <div className="bg-gold/80 px-2 py-1 text-[9px] text-black font-mono uppercase">
-              Live Data
-            </div>
-          </div>
+      {scarcityTag && (
+        <div className="mb-6">
+          <span className="bg-[#C5B358] text-black text-[10px] md:text-xs uppercase tracking-[0.15em] font-sans font-bold px-4 py-1.5 rounded-full">
+            {scarcityTag}
+          </span>
         </div>
-      </div>
+      )}
 
-      <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-center">
-        <h3 className="font-serif text-2xl md:text-3xl font-semibold text-black mb-6">
-          {title}
-        </h3>
+      <h3 className="font-serif text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-6 uppercase tracking-[0.05em]">
+        {headline}
+      </h3>
 
-        <ul className="space-y-3 mb-8">
-          {items.map((item) => (
-            <li key={item} className="flex items-start gap-3">
-              <Check size={16} className="text-black mt-0.5 flex-shrink-0" />
-              <span className="text-sm uppercase tracking-[0.1em] text-black/70 font-sans">{item}</span>
-            </li>
-          ))}
-        </ul>
+      <p className="text-sm md:text-[15px] leading-relaxed text-white/60 font-sans mb-8 max-w-sm">
+        {subtext}
+      </p>
 
-        <Link
-          href={ctaLink}
-          className="inline-flex items-center gap-3 bg-black text-white text-xs uppercase tracking-[0.15em] font-semibold px-6 py-3 w-fit hover:bg-black/80 transition-colors group"
-        >
-          {cta}
-          <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-        </Link>
-      </div>
+      <p className="text-[#C5B358] text-lg md:text-xl lg:text-2xl font-bold font-sans tracking-wide mb-10">
+        {keyStat}
+      </p>
+
+      <Link
+        href={ctaLink}
+        className="inline-flex items-center gap-3 bg-[#C5B358] text-black text-xs uppercase tracking-[0.15em] font-bold px-6 py-3 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(197,179,88,0.4)] group"
+      >
+        {cta}
+        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+      </Link>
     </motion.div>
   );
 }
 
 export default function ServicesGrid() {
   return (
-    <section className="w-full bg-white py-16 md:py-24">
+    <section className="w-full bg-black py-28 md:py-40">
       <motion.p
         className="text-center text-gold text-xs uppercase tracking-[0.3em] font-sans font-semibold mb-14"
         initial={{ opacity: 0, y: 15 }}
@@ -76,29 +65,30 @@ export default function ServicesGrid() {
         Stable Services
       </motion.p>
 
-      <div className="max-w-6xl mx-auto px-6 md:px-10 space-y-12 md:space-y-16">
-        <ServiceCard
-          title="Elite Development"
-          items={["QB Academy", "1 on 1 + Elite Small Groups", "NFL Draft Prep", "College + NFL Training"]}
+      <div className="max-w-6xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-3 gap-12">
+        <PillarCard
+          headline="Elite Development"
+          subtext="The complete development system. We go Beyond the Throw, integrating elite mechanics with film, board work, reaction based reps, and high stakes competition to create elite signal callers."
+          keyStat="$53M+ IN NFL CONTRACTS"
           cta="Apply for Evaluation"
           ctaLink="/academy"
-          imageColor="#1a2a3a"
           index={0}
         />
-        <ServiceCard
-          title="Collegiate Exposure"
-          items={["Custom Curated Highlight", "College Coaches Contact Database", "Recruiting Evaluation", "Scholarship & NIL Marketing"]}
-          cta="Request Highlight Assessment"
+        <PillarCard
+          headline="Recruiting Film Blueprint"
+          subtext="Strategic highlight engineering curated for college staffs. Includes our coaches contact database, level of play evaluation, and outreach roadmap."
+          keyStat="$15M+ IN SCHOLARSHIPS & NIL VALUE"
+          cta="Secure Your Slot"
           ctaLink="/exposure"
-          imageColor="#2a3a2a"
+          scarcityTag="10 Slots Monthly"
           index={1}
         />
-        <ServiceCard
-          title="Strategic Consulting"
-          items={["Indy Architecture Audit", "Reactive Drill Protocols", "Closed Loop vs Open Loop Drills", "Mechanics and Sequencing"]}
-          cta="Schedule Indy Audit"
+        <PillarCard
+          headline="The Stable Methodology"
+          subtext="FOR COACHES: Optimize every rep and maximize your Indy time. Master the foundations of stability and the consistent movements required for high level QB development."
+          keyStat="9 NFL | 40+ D1 | 125+ COLLEGE QBS"
+          cta="Book Discovery Call"
           ctaLink="/consulting"
-          imageColor="#3a2a1a"
           index={2}
         />
       </div>

@@ -1,0 +1,35 @@
+"Strategic Film Architecture" is a bit of a mouthful. For a $1k+ service, the title needs to sound like a high-value asset, not just a creative project. You want words that imply your film is a weapon for the athlete.
+Here are 4 elite options for Pillar 2, depending on the specific "angle" you want to take:
+Option 1: FILM ASSET ENGINEERING (The Technical Powerhouse)
+ * Why it works: It matches the "Methodology" vibe. It suggests the film is "engineered" with intent, not just "edited." It justifies the $1k price by sounding technical and precise.
+Option 2: THE RECRUITMENT BLUEPRINT (The Roadmap)
+ * Why it works: It emphasizes that they aren't just getting a video—they are getting the database, the contact sheet, and the evaluation. It’s the "whole plan" to get recruited.
+Option 3: COLLEGIATE EXPOSURE STRATEGY (The High-End Consultant)
+ * Why it works: This is the most professional/corporate version. It sounds like high-level consulting. For parents spending $1k, "Strategy" is a very comforting word.
+Option 4: VISUAL SCOUTING INTEL (The Insider Edge)
+ * Why it works: It connects back to your "Coaching IQ" and "Intel" themes. It implies you know exactly what scouts are looking for and you are "leaking" that intel through their film.
+Updated Replit Refinement Prompt
+Pick your favorite title from above and swap it into the [TITLE] slot below.
+> "Refine the 3-Pillar Grid with updated titles, stats, and coaching-specific logic.
+> 1. Pillar 1 (TRAINING):
+>  * Headline: ELITE DEVELOPMENT
+>  * Key Stat: '$53M+ IN NFL CONTRACTS' (Vegas Gold #C5B358)
+>  * CTA: 'APPLY FOR EVALUATION'
+> 2. Pillar 2 (RECRUITING):
+>  * Headline: [INSERT CHOSEN TITLE HERE]
+>  * Subtext: 'Strategic highlight engineering curated for college coaches. Includes our proprietary contact database, level-of-play evaluation, and recruitment roadmap.'
+>  * Key Stat: '$15M+ IN SCHOLARSHIPS & NIL VALUE' (Vegas Gold #C5B358)
+>  * CTA: 'SECURE YOUR SLOT'
+> 3. Pillar 3 (METHODOLOGY):
+>  * Headline: THE STABLE METHODOLOGY
+>  * Subtext: 'FOR COACHES: Optimize every rep and maximize your Indy time. Master the foundations of stability and the precise mechanics required for high-level QB development.'
+>  * Key Stat: '9 NFL | 40+ D1 | 125+ COLLEGE QBS' (Vegas Gold #C5B358)
+>  * CTA: 'BOOK DISCOVERY CALL'
+> 4. Design Requirements:
+>  * Card Styling: Background #121212, top-border 1px solid #C5B358 (Vegas Gold).
+>  * Hierarchy: Key Stats must be bold and the second largest text on the card.
+>  * Pacing: Maintain py-40 section padding and gap-12 between pillars."
+> 
+Pro-Tip for Pillar 2
+Since this is a $1k service, ask Replit to add a very small "Limited Enrollment" or "10 Slots Monthly" tag to the top of the Recruiting card. Scarcity is the best friend of a high-ticket service.
+Which of those four titles feels most like the "Stable" brand to you? Once you pick, that prompt is ready to drop into Replit.
