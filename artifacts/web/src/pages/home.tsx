@@ -6,6 +6,7 @@ import ServicesGrid from "@/components/home/ServicesGrid";
 import StableStandard from "@/components/home/StableStandard";
 import ReviewVault from "@/components/home/ReviewVault";
 import FaqIntake from "@/components/home/FaqIntake";
+import InstitutionalIntakePopup from "@/components/home/InstitutionalIntakePopup";
 import { useSEO } from "@/hooks/useSEO";
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <StableStandard />
       <ReviewVault />
       <FaqIntake />
+      <InstitutionalIntakePopup />
     </>
   );
 }
