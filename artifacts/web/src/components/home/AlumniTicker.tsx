@@ -66,6 +66,10 @@ function LogoItem({ name, src }: { name: string; src: string }) {
         src={src}
         alt={name}
         className="w-full h-full object-contain"
+        style={{
+          filter:
+            "grayscale(100%) sepia(60%) saturate(300%) hue-rotate(15deg) brightness(88%)",
+        }}
         loading="lazy"
       />
     </div>
@@ -108,6 +112,22 @@ export default function AlumniTicker() {
       <div className="relative">
         <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-white to-transparent z-10" />
         <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-white to-transparent z-10" />
+
+        <div
+          className="absolute inset-0 z-[5] pointer-events-none overflow-hidden"
+        >
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              bottom: 0,
+              width: "20%",
+              background:
+                "linear-gradient(105deg, transparent 0%, rgba(197,179,88,0.12) 35%, rgba(212,195,106,0.22) 50%, rgba(197,179,88,0.12) 65%, transparent 100%)",
+              animation: "gold-shimmer-sweep 5s ease-in-out infinite",
+            }}
+          />
+        </div>
 
         <div
           ref={trackRef}
