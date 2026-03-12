@@ -89,7 +89,7 @@ export default function ServicesGrid() {
           index={0}
         />
         <PillarCard
-          title="Recruiting Film Blueprint"
+          title="Exposure Blueprint"
           subtext="Strategic highlight engineering curated for college staffs. Your best plays, polished & positioned for the next level. Includes our coaches contact database, level of play evaluation, and outreach roadmap."
           proofStat="$15M+ IN SCHOLARSHIPS | $11M+ IN NIL"
           cta="Secure Your Slot"
