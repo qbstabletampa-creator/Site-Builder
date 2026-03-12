@@ -21,7 +21,7 @@ const standards = [
 
 export default function StableStandard() {
   return (
-    <section className="w-full bg-white py-16 md:py-24">
+    <section id="stable-standard" className="w-full bg-white py-16 md:py-24">
       <motion.p
         className="text-center text-gold text-xs uppercase tracking-[0.3em] font-sans font-semibold mb-14"
         initial={{ opacity: 0, y: 15 }}
