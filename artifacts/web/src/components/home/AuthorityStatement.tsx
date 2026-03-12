@@ -35,7 +35,7 @@ export default function AuthorityStatement() {
           style={{
             width: 100,
             height: 1,
-            backgroundColor: "#C5B358",
+            backgroundColor: "#D4C36A",
           }}
         />
         <h2
@@ -53,7 +53,7 @@ export default function AuthorityStatement() {
               className="block whitespace-nowrap"
               style={{
                 fontSize: "clamp(2.2rem, 8vw, 8rem)",
-                color: "#C5B358",
+                color: "#D4C36A",
               }}
             >
               {line}
@@ -64,7 +64,7 @@ export default function AuthorityStatement() {
           style={{
             width: 100,
             height: 1,
-            backgroundColor: "#C5B358",
+            backgroundColor: "#D4C36A",
           }}
         />
       </motion.div>

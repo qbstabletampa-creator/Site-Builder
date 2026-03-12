@@ -114,22 +114,6 @@ export default function AlumniTicker() {
         <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-white to-transparent z-10" />
 
         <div
-          className="absolute inset-0 z-[5] pointer-events-none overflow-hidden"
-        >
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              bottom: 0,
-              width: "20%",
-              background:
-                "linear-gradient(105deg, transparent 0%, rgba(197,179,88,0.12) 35%, rgba(212,195,106,0.22) 50%, rgba(197,179,88,0.12) 65%, transparent 100%)",
-              animation: "gold-shimmer-sweep 5s ease-in-out infinite",
-            }}
-          />
-        </div>
-
-        <div
           ref={trackRef}
           className="flex"
           style={
@@ -153,7 +137,7 @@ export default function AlumniTicker() {
           e.preventDefault();
           document.getElementById("intake")?.scrollIntoView({ behavior: "smooth" });
         }}
-        className="mx-auto mt-8 block w-fit cursor-pointer rounded-full border border-[#C5B358]/40 bg-white/60 px-5 py-1.5 text-xs uppercase tracking-[0.25em] text-black/60 font-sans font-semibold backdrop-blur"
+        className="mx-auto mt-8 block w-fit cursor-pointer rounded-full border border-gold/40 bg-white/60 px-5 py-1.5 text-xs uppercase tracking-[0.25em] text-black/60 font-sans font-semibold backdrop-blur"
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         whileHover={{ scale: 1.05 }}
