@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 import devHero from "@assets/IMG_2094_1773316474795.jpeg";
 import exposureHero from "@assets/IMG_2095_1773316474795.jpeg";
-import consultingHero from "@assets/IMG_0462_1773316474795.jpeg";
+import consultingHero from "@assets/IMG_0462_1773317251472.jpeg";
 
 interface PillarCardProps {
   title: string;
@@ -109,7 +109,7 @@ export default function ServicesGrid() {
           ctaLink="/consulting"
           heroImage={consultingHero}
           heroAlt="Coach directing quarterback through throwing drill on the field"
-          heroPosition="center 80%"
+          heroPosition="center 40%"
           index={2}
         />
       </div>
