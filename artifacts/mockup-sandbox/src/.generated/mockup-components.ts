@@ -4,5 +4,6 @@ export const modules: ModuleMap = {
   "./components/mockups/ticker-variants/BlackGoldChrome.tsx": () => import("../components/mockups/ticker-variants/BlackGoldChrome.tsx"),
   "./components/mockups/ticker-variants/DarkChrome.tsx": () => import("../components/mockups/ticker-variants/DarkChrome.tsx"),
   "./components/mockups/ticker-variants/FullColor.tsx": () => import("../components/mockups/ticker-variants/FullColor.tsx"),
-  "./components/mockups/ticker-variants/GoldChrome.tsx": () => import("../components/mockups/ticker-variants/GoldChrome.tsx")
+  "./components/mockups/ticker-variants/GoldChrome.tsx": () => import("../components/mockups/ticker-variants/GoldChrome.tsx"),
+  "./components/mockups/ticker-variants/Picker.tsx": () => import("../components/mockups/ticker-variants/Picker.tsx")
 };
