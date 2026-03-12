@@ -2,14 +2,15 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import heroImage from "@assets/IMG_2130_1773271236127.jpeg";
-import heroVideo from "@assets/hero-video.mp4";
 import stableLogo from "@assets/stable-logo.png";
+
+const heroVideoUrl = `${import.meta.env.BASE_URL}hero-video.mp4`;
 
 export default function HeroSection() {
   const [videoReady, setVideoReady] = useState(false);
 
   return (
-    <section className="relative w-full min-h-[100vh] md:min-h-[800px] flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative w-full h-dvh flex flex-col items-center justify-center overflow-hidden">
       <Link
         href="/"
         className="absolute top-3 left-1/2 -translate-x-1/2 z-20"
@@ -30,7 +31,7 @@ export default function HeroSection() {
           className="w-full h-full object-cover"
           onCanPlay={() => setVideoReady(true)}
         >
-          <source src={heroVideo} type="video/mp4" />
+          <source src={heroVideoUrl} type="video/mp4" />
         </video>
         {!videoReady && (
           <img
