@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
 import { motion, useScroll } from "framer-motion";
-import stableLogo from "@assets/stable-logo.png";
 import WorkWithUsModal from "@/components/WorkWithUsModal";
 
 export default function Navbar() {
@@ -21,17 +19,6 @@ export default function Navbar() {
           style={{ scaleX: progress }}
         />
       </div>
-
-      <Link
-        href="/"
-        className="fixed top-3 left-1/2 -translate-x-1/2 z-50"
-      >
-        <img
-          src={stableLogo}
-          alt="The QB Stable"
-          className="h-[30px] md:h-[36px] w-auto opacity-80 hover:opacity-100 transition-opacity drop-shadow-lg"
-        />
-      </Link>
 
       <button
         onClick={() => setModalOpen(true)}
