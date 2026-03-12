@@ -95,7 +95,7 @@ export default function AlumniTicker() {
     return () => window.removeEventListener("resize", measure);
   }, []);
 
-  const animationDuration = 35;
+  const animationDuration = 60;
 
   return (
     <motion.section
