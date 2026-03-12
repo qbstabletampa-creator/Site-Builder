@@ -10,7 +10,7 @@ interface StatProps {
 }
 
 function Stat({ prefix = "", value, suffix = "", label, index }: StatProps) {
-  const { count, ref } = useCountUp(value, 2000);
+  const { count, ref } = useCountUp(value, 1200);
   return (
     <motion.div
       ref={ref}
