@@ -127,15 +127,21 @@ export default function AlumniTicker() {
         </div>
       </div>
 
-      <motion.p
-        className="text-center mt-8 text-xs uppercase tracking-[0.25em] text-black/60 font-sans font-semibold"
+      <motion.a
+        href="#intake"
+        onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+          e.preventDefault();
+          document.getElementById("intake")?.scrollIntoView({ behavior: "smooth" });
+        }}
+        className="mx-auto mt-8 block w-fit cursor-pointer rounded-full border border-[#C5B358]/40 bg-white/60 px-5 py-1.5 text-xs uppercase tracking-[0.25em] text-black/60 font-sans font-semibold backdrop-blur"
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
+        whileHover={{ scale: 1.05 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        Trusted by the Best
-      </motion.p>
+        Train with the Best
+      </motion.a>
     </motion.section>
   );
 }
