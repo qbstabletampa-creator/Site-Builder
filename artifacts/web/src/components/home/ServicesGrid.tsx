@@ -15,9 +15,10 @@ interface PillarCardProps {
   scarcityTag?: string;
   heroImage: string;
   heroAlt: string;
+  heroPosition?: string;
 }
 
-function PillarCard({ title, subtext, proofStat, cta, ctaLink, index, scarcityTag, heroImage, heroAlt }: PillarCardProps) {
+function PillarCard({ title, subtext, proofStat, cta, ctaLink, index, scarcityTag, heroImage, heroAlt, heroPosition = "center" }: PillarCardProps) {
   return (
     <motion.div
       className="h-full flex flex-col items-center text-center border-t border-t-gold overflow-hidden"
@@ -32,6 +33,7 @@ function PillarCard({ title, subtext, proofStat, cta, ctaLink, index, scarcityTa
           src={heroImage}
           alt={heroAlt}
           className="w-full h-full object-cover grayscale brightness-75 contrast-110"
+          style={{ objectPosition: heroPosition }}
           loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#121212]" />
@@ -107,6 +109,7 @@ export default function ServicesGrid() {
           ctaLink="/consulting"
           heroImage={consultingHero}
           heroAlt="Coach directing quarterback through throwing drill on the field"
+          heroPosition="center 60%"
           index={2}
         />
       </div>
