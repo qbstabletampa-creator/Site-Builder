@@ -1,3 +1,4 @@
+import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import falconsLogo from "@assets/logos/falcons.png";
@@ -72,7 +73,29 @@ function LogoItem({ name, src }: { name: string; src: string }) {
 }
 
 export default function AlumniTicker() {
-  const doubled = [...logos, ...logos];
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [halfWidth, setHalfWidth] = useState(0);
+
+  useEffect(() => {
+    function measure() {
+      if (!trackRef.current) return;
+      const children = trackRef.current.children;
+      const count = logos.length;
+      let w = 0;
+      for (let i = 0; i < count; i++) {
+        w += (children[i] as HTMLElement).offsetWidth;
+        const style = getComputedStyle(children[i] as HTMLElement);
+        w += parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+      }
+      setHalfWidth(w);
+    }
+
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
+
+  const animationDuration = 35;
 
   return (
     <motion.section
@@ -86,8 +109,19 @@ export default function AlumniTicker() {
         <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-white to-transparent z-10" />
         <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-white to-transparent z-10" />
 
-        <div className="flex animate-marquee">
-          {doubled.map((logo, i) => (
+        <div
+          ref={trackRef}
+          className="flex"
+          style={
+            halfWidth > 0
+              ? {
+                  width: halfWidth * 2,
+                  animation: `ticker-scroll ${animationDuration}s linear infinite`,
+                }
+              : { width: "max-content" }
+          }
+        >
+          {[...logos, ...logos].map((logo, i) => (
             <LogoItem key={`${logo.name}-${i}`} {...logo} />
           ))}
         </div>
