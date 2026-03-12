@@ -109,7 +109,7 @@ export default function ServicesGrid() {
           ctaLink="/consulting"
           heroImage={consultingHero}
           heroAlt="Coach directing quarterback through throwing drill on the field"
-          heroPosition="center 60%"
+          heroPosition="center 80%"
           index={2}
         />
       </div>
