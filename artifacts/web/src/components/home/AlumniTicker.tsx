@@ -1,23 +1,23 @@
 import { motion } from "framer-motion";
 
-import falconsLogo from "@assets/logos/falcons_clean.png";
-import chiefsLogo from "@assets/logos/chiefs_clean.png";
-import ravensLogo from "@assets/logos/ravens_clean.png";
+import falconsLogo from "@assets/logos/falcons.png";
+import chiefsLogo from "@assets/logos/chiefs.png";
+import ravensLogo from "@assets/logos/ravens.png";
 import dolphinsLogo from "@assets/logos/dolphins.png";
-import texansLogo from "@assets/logos/texans_clean.png";
-import seahawksLogo from "@assets/logos/seahawks_clean.png";
+import texansLogo from "@assets/logos/texans.png";
+import seahawksLogo from "@assets/logos/seahawks.png";
 import steelersLogo from "@assets/logos/steelers.png";
-import brownsLogo from "@assets/logos/browns_clean.png";
+import brownsLogo from "@assets/logos/browns.png";
 import jetsLogo from "@assets/logos/jets.png";
 
 import pennStateLogo from "@assets/logos/penn-state.png";
-import auburnLogo from "@assets/logos/auburn_clean.png";
+import auburnLogo from "@assets/logos/auburn.png";
 import clemsonLogo from "@assets/logos/clemson.png";
 import washingtonLogo from "@assets/logos/washington.png";
-import iowaStateLogo from "@assets/logos/iowa-state_clean.png";
-import nebraskaLogo from "@assets/logos/nebraska_clean.png";
+import iowaStateLogo from "@assets/logos/iowa-state.png";
+import nebraskaLogo from "@assets/logos/nebraska.png";
 import usfLogo from "@assets/logos/usf.png";
-import indianaLogo from "@assets/logos/indiana_clean.png";
+import indianaLogo from "@assets/logos/indiana.png";
 import miamiLogo from "@assets/logos/miami.png";
 import virginiaLogo from "@assets/logos/virginia.svg";
 
