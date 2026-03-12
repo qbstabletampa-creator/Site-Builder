@@ -10,7 +10,6 @@ import Exposure from "@/pages/exposure";
 import Consulting from "@/pages/consulting";
 import Faq from "@/pages/faq";
 import NotFound from "@/pages/not-found";
-import TickerPicker from "@/pages/ticker-picker";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
 
@@ -42,7 +41,6 @@ function Router() {
         <Route path="/exposure" component={Exposure} />
         <Route path="/consulting" component={Consulting} />
         <Route path="/faq" component={Faq} />
-        <Route path="/picker" component={TickerPicker} />
         <Route component={NotFound} />
       </Switch>
     </>

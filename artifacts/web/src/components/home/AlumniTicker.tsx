@@ -67,8 +67,7 @@ function LogoItem({ name, src }: { name: string; src: string }) {
         alt={name}
         className="w-full h-full object-contain"
         style={{
-          filter:
-            "grayscale(100%) sepia(60%) saturate(300%) hue-rotate(15deg) brightness(88%)",
+          filter: "none",
         }}
         loading="lazy"
       />
