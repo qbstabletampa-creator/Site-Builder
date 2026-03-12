@@ -2,25 +2,12 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import heroImage from "@assets/IMG_2130_1773271236127.jpeg";
 import heroVideo from "@assets/hero-video.mp4";
-import stableLogo from "@assets/stable-logo.png";
-import { Link } from "wouter";
 
 export default function HeroSection() {
   const [videoReady, setVideoReady] = useState(false);
 
   return (
     <section className="relative w-full min-h-[100vh] md:min-h-[800px] flex flex-col items-center justify-center overflow-hidden">
-      <Link
-        href="/"
-        className="absolute top-3 left-1/2 -translate-x-1/2 z-30"
-      >
-        <img
-          src={stableLogo}
-          alt="The QB Stable"
-          className="h-[34px] md:h-[40px] w-auto opacity-90 hover:opacity-100 transition-opacity drop-shadow-lg"
-        />
-      </Link>
-
       <div className="absolute inset-0 z-0">
         <video
           autoPlay
