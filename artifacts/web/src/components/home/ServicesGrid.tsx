@@ -38,7 +38,7 @@ function ServiceCard({ title, items, cta, ctaLink, imageColor, index }: ServiceC
       </div>
 
       <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-center">
-        <h3 className="font-serif text-2xl md:text-3xl italic font-semibold text-black mb-6">
+        <h3 className="font-serif text-2xl md:text-3xl font-semibold text-black mb-6">
           {title}
         </h3>
 

@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 interface StatProps {
   prefix?: string;
   value: number;
-  suffix: string;
+  suffix?: string;
   label: string;
   index: number;
 }
 
-function Stat({ prefix = "", value, suffix, label, index }: StatProps) {
+function Stat({ prefix = "", value, suffix = "", label, index }: StatProps) {
   const { count, ref } = useCountUp(value, 2000);
   return (
     <motion.div
@@ -43,10 +43,10 @@ export default function TelemetryBar() {
         <div className="w-full h-[1px] bg-black/5" />
 
         <div className="grid grid-cols-2 sm:grid-cols-4">
-          <Stat value={9} suffix="+" label="NFL QBs" index={3} />
+          <Stat value={9} label="NFL QBs" index={3} />
           <Stat value={40} suffix="+" label="D1 QBs" index={4} />
-          <Stat value={120} suffix="+" label="College QBs" index={5} />
-          <Stat value={50} suffix="+" label="QB Coach Exp" index={6} />
+          <Stat value={125} suffix="+" label="College QBs" index={5} />
+          <Stat value={50} suffix="+" label="Yrs QB Coach Exp" index={6} />
         </div>
       </div>
     </section>

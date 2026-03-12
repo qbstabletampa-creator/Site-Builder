@@ -42,7 +42,7 @@ export default function ReviewVault() {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.6, delay: i * 0.12 }}
             >
-              <p className="text-white/65 text-sm leading-relaxed font-sans italic mb-8">
+              <p className="text-white/65 text-sm leading-relaxed font-sans mb-8">
                 "{review.quote}"
               </p>
               <div>
