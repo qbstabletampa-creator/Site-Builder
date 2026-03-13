@@ -1,0 +1,45 @@
+That looks awesome. I want to try two more styles.
+First one:
+https://www.eightsleep.com
+Why it’s Elite: This is exactly how you justify a high price point ($2k+ mattresses). They use "Technical Porn"—high-resolution thermal renders and data visualizations—to prove the product works.
+• Takeaway for you: Use this style for your Training Pillar. Show "Live Data" overlays on your QBs to make the "Methodology" feel like a science, not just a workout.
+
+I want to try that 8 sleep style on all three product pages. Reminder to put placeholders of where you need content just like you did for the other format.
+
+Feel like I need more images and media to add those interactive photos and graphics
+
+You're right — the pages are designed with specific media placeholders that describe exactly what photos and graphics you'll need. Each page has a detailed shot list at the top of the file that breaks down every image slot.
+
+Here's a consolidated list of what you'd need to fill in across all three pages:
+
+Academy Page (8 media slots):
+
+Hero background — cinematic QB in motion, dramatic studio lighting (1920×1080)
+Hero data overlay — HUD-style visualization with arm angles, velocity arcs (1920×1080 transparent)
+Group training session — overhead angle, moody lighting (800×1000)
+Mechanics correction close-up — dramatic side lighting (800×1000)
+Pro-day/combine setting — low angle power shot (800×1000)
+Off-season training — intense focus, dark treatment (800×1000)
+Methodology section — slow-motion throwing or biomechanical analysis (1920×800)
+Results data visualization — performance metrics chart or heat map (1200×600)
+Exposure Page (8 media slots):
+
+Hero background — highlight throw, stadium, broadcast lighting (1920×1080)
+Hero data overlay — recruiting funnel or coach network map (1920×1080 transparent)
+Film editing interface or highlight frame (800×1000)
+College campus/stadium aerial, dark treatment (800×1000)
+Camp/combine evaluation, analytical feel (800×1000)
+QB in branding/media setting (800×1000)
+Recruiting pipeline visualization or placement map (1920×800)
+Exposure metrics data visualization (1200×600)
+Consulting Page (8 media slots):
+
+Hero background — film room or whiteboard strategy, blueprint aesthetic (1920×1080)
+Hero data overlay — practice architecture diagram or drill flow (1920×1080 transparent)
+Coach reviewing film on tablet (800×1000)
+QB in read-react drill, dynamic capture (800×1000)
+Split controlled vs. chaotic drill environments (800×1000)
+Biomechanical analysis, slow-motion capture (800×1000)
+Practice architecture diagram, blueprint-style (1920×800)
+Program improvement metrics visualization (1200×600)
+That's 24 total media assets across the three pages. Once you have the photos and graphics, I can drop them right into the placeholders. Do you have existing photos or video captures you'd like to use, or would you like me to help source or generate some of these?
