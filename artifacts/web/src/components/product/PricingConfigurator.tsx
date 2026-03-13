@@ -60,8 +60,8 @@ export default function PricingConfigurator({
               <StaggerItem key={tier.name} className="overflow-visible">
                 <motion.div
                   className={`relative cursor-pointer text-center transition-colors duration-300 overflow-visible ${
-                    tier.popular ? "pt-10 pb-8 px-8 md:pt-12 md:pb-10 md:px-10" : "p-8 md:p-10"
-                  } ${
+                    tier.popular ? "border-t-2 border-t-gold md:-mt-3 md:mb-3 shadow-lg pt-14 md:pt-16" : ""
+                  } p-8 md:p-10 ${
                     isSelected
                       ? isDark
                         ? "bg-white text-black z-10 shadow-2xl"
@@ -76,7 +76,7 @@ export default function PricingConfigurator({
                   layout
                 >
                   {tier.popular && (
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gold text-black text-[10px] uppercase tracking-wider font-semibold px-4 py-1 whitespace-nowrap z-20">
+                    <div className="absolute top-3 left-1/2 -translate-x-1/2 bg-gold text-black text-[10px] uppercase tracking-wider font-semibold px-4 py-1 whitespace-nowrap z-20">
                       Most Popular
                     </div>
                   )}
