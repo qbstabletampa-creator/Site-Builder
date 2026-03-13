@@ -23,7 +23,7 @@ export default function Navbar() {
     <>
       <div className="fixed top-0 left-0 right-0 z-[60] h-[2px] bg-white/5">
         <motion.div
-          className="h-full bg-gold origin-center shadow-[0_0_10px_rgba(212,175,55,0.5)]"
+          className="h-full bg-gold origin-center shadow-[0_0_10px_rgba(212,195,106,0.5)]"
           style={{ scaleX: progress }}
         />
       </div>

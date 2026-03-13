@@ -66,7 +66,7 @@ function PillarCard({ title, subtext, proofStat, cta, ctaLink, index, scarcityTa
         >
           <Link
             href={ctaLink}
-            className="inline-flex items-center bg-gold text-black text-xs uppercase tracking-[0.15em] font-semibold px-7 py-3 hover:shadow-[0_0_20px_rgba(197,179,88,0.5)] transition-shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+            className="inline-flex items-center bg-gold text-black text-xs uppercase tracking-[0.15em] font-semibold px-7 py-3 hover:shadow-[0_0_20px_rgba(212,195,106,0.5)] transition-shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
           >
             {cta}
           </Link>
