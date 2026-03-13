@@ -1,15 +1,23 @@
 import { useState, useEffect } from "react";
 import { motion, useScroll } from "framer-motion";
+import { useLocation } from "wouter";
 import WorkWithUsModal from "@/components/WorkWithUsModal";
+
+const PRODUCT_PAGES = ["/academy", "/exposure", "/consulting"];
 
 export default function Navbar() {
   const { scrollYProgress } = useScroll();
   const [progress, setProgress] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
+  const [location] = useLocation();
+
+  const isProductPage = PRODUCT_PAGES.includes(location);
 
   useEffect(() => {
     return scrollYProgress.on("change", (v) => setProgress(v));
   }, [scrollYProgress]);
+
+  if (isProductPage) return null;
 
   return (
     <>

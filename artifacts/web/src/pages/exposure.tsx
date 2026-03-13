@@ -1,134 +1,138 @@
-import { Link } from "wouter";
-import { ArrowRight, Check } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
+import ProductTopBar from "@/components/product/ProductTopBar";
+import ProductHero from "@/components/product/ProductHero";
+import FeatureFlow from "@/components/product/FeatureFlow";
+import ParallaxCards from "@/components/product/ParallaxCards";
+import SpecSheet from "@/components/product/SpecSheet";
+import PricingConfigurator from "@/components/product/PricingConfigurator";
+
+const hudMetrics = [
+  { label: "Film Views Generated", value: "12.4K", unit: "avg" },
+  { label: "Coach Response Rate", value: "68", unit: "%" },
+  { label: "Scholarship Value", value: "$15M+", unit: "total" },
+  { label: "Placement Success", value: "94", unit: "%" },
+];
 
 const features = [
   {
     title: "Custom Curated Highlights",
-    description: "Professionally edited highlight reels designed to showcase your best throws, decision-making, and athleticism. Tailored to what college coaches want to see."
+    description:
+      "Professionally edited highlight reels designed to showcase your best throws, decision-making, and athleticism. Tailored to what college coaches want to see.",
+    metric: { value: "12.4K", label: "Avg Views" },
   },
   {
     title: "College Coaches Contact Database",
-    description: "Direct access to our proprietary database of college coaching contacts at every level — from NAIA to Power Five programs."
+    description:
+      "Direct access to our proprietary database of college coaching contacts at every level — from NAIA to Power Five programs.",
+    metric: { value: "850+", label: "Contacts" },
   },
   {
     title: "Recruiting Evaluation",
-    description: "Honest, data-driven assessment of where you stand in the recruiting landscape. We identify realistic targets and reach schools."
+    description:
+      "Honest, data-driven assessment of where you stand in the recruiting landscape. We identify realistic targets and reach schools.",
+    metric: { value: "40+", label: "D1 Placements" },
   },
   {
     title: "Scholarship & NIL Marketing",
-    description: "Strategic guidance on maximizing scholarship opportunities and building NIL value before, during, and after the recruiting process."
+    description:
+      "Strategic guidance on maximizing scholarship opportunities and building NIL value before, during, and after the recruiting process.",
+    metric: { value: "$11M+", label: "NIL Generated" },
   },
 ];
 
-const included = [
-  "Professional Film Editing",
-  "Recruiting Profile Creation",
-  "Coach Outreach Campaigns",
-  "Camp & Combine Preparation",
-  "NIL Strategy & Valuation",
-  "Ongoing Recruiting Updates",
+const mediaSlots = [
+  { label: "Highlight Reel", sublabel: "Professional Edit" },
+  { label: "Coach Outreach", sublabel: "Campaign Dashboard" },
+  { label: "Evaluation Report", sublabel: "Recruiting Analysis" },
+  { label: "NIL Portfolio", sublabel: "Brand Strategy" },
+];
+
+const parallaxCards = [
+  {
+    label: "Film Session",
+    sublabel: "Highlight Curation",
+    gradientFrom: "#1a1a0f",
+    gradientTo: "#0a0a05",
+  },
+  {
+    label: "Camp Showcase",
+    sublabel: "Live Evaluation",
+    gradientFrom: "#0f1a1a",
+    gradientTo: "#050a0a",
+  },
+  {
+    label: "Signing Day",
+    sublabel: "Commitment Ceremony",
+    gradientFrom: "#1a0f1a",
+    gradientTo: "#0a050a",
+  },
+];
+
+const specItems = [
+  { label: "Professional Film Editing", detail: "Multi-angle highlight reel" },
+  { label: "Recruiting Profile Creation", detail: "NCSA & Hudl optimization" },
+  { label: "Coach Outreach Campaigns", detail: "Personalized email sequences" },
+  { label: "Camp & Combine Preparation", detail: "Event selection & training" },
+  { label: "NIL Strategy & Valuation", detail: "Brand positioning plan" },
+  { label: "Ongoing Recruiting Updates", detail: "Bi-weekly status reports" },
+];
+
+const pricingTiers = [
+  { name: "Highlight Only", subtitle: "Film editing package", price: "Contact" },
+  { name: "Full Exposure", subtitle: "Complete recruiting", price: "Contact", popular: true },
+  { name: "Elite Package", subtitle: "Training + exposure", price: "Contact" },
+];
+
+const pricingFeatures = [
+  { label: "Professional Film Editing", tiers: [true, true, true] },
+  { label: "Recruiting Profile", tiers: [false, true, true] },
+  { label: "Coach Outreach Campaign", tiers: [false, true, true] },
+  { label: "Camp & Combine Prep", tiers: [false, true, true] },
+  { label: "NIL Strategy", tiers: [false, false, true] },
+  { label: "Academy Training Sessions", tiers: [false, false, true] },
+  { label: "Dedicated Recruiting Advisor", tiers: [false, false, true] },
 ];
 
 export default function Exposure() {
   useSEO({
     title: "Collegiate Exposure | QB Recruiting & Highlights — The QB Stable",
-    description: "Custom highlight reels, college coach database access, recruiting evaluations, and NIL strategy. 40+ D1 QBs produced. Get seen by the right programs.",
+    description:
+      "Custom highlight reels, college coach database access, recruiting evaluations, and NIL strategy. 40+ D1 QBs produced. Get seen by the right programs.",
   });
+
   return (
     <>
-      <section className="relative w-full min-h-[60vh] flex items-end bg-black pt-20">
-        <div className="absolute top-0 left-0 right-0 h-[3px] bg-gold" />
-        <div className="max-w-6xl mx-auto w-full px-6 md:px-10 pb-16 md:pb-24">
-          <p className="text-gold text-xs uppercase tracking-[0.3em] font-sans font-semibold mb-4">
-            Collegiate Exposure
-          </p>
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-            Get Seen
-          </h1>
-          <p className="mt-6 text-white/60 text-base md:text-lg max-w-2xl font-sans leading-relaxed">
-            Quarterback highlights, recruiting evaluation, and scholarship marketing. Your path to collegiate football starts here.
-          </p>
-        </div>
-      </section>
+      <ProductTopBar ctaLabel="Request Highlight Assessment" />
 
-      <section className="w-full bg-white py-16 md:py-24 px-6 md:px-10">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-gold text-xs uppercase tracking-[0.3em] font-sans font-semibold mb-12">
-            Exposure Services
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 border-t border-l border-black/10">
-            {features.map((feature) => (
-              <div key={feature.title} className="border-r border-b border-black/10 p-8 md:p-12">
-                <h3 className="font-serif text-xl md:text-2xl font-semibold text-black mb-4">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-black/60 leading-relaxed font-sans">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProductHero
+        eyebrow="Collegiate Exposure"
+        title="Get Seen"
+        description="Quarterback highlights, recruiting evaluation, and scholarship marketing. Your path to collegiate football starts here."
+        hudMetrics={hudMetrics}
+      />
 
-      <section className="w-full bg-black py-16 md:py-24 px-6 md:px-10">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-gold text-xs uppercase tracking-[0.3em] font-sans font-semibold mb-8 text-center">
-            What's Included
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {included.map((item) => (
-              <div key={item} className="flex items-center gap-3 py-3 border-b border-white/10">
-                <Check size={16} className="text-gold flex-shrink-0" />
-                <span className="text-white/80 text-sm font-sans">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FeatureFlow
+        sectionLabel="Exposure Services"
+        features={features}
+        theme="light"
+        mediaSlots={mediaSlots}
+      />
 
-      <section className="w-full bg-white py-16 md:py-24 px-6 md:px-10">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-gold text-xs uppercase tracking-[0.3em] font-sans font-semibold mb-4 text-center">
-            Pricing
-          </p>
-          <h2 className="font-serif text-3xl md:text-4xl text-black text-center mb-12">
-            Exposure Packages
-          </h2>
+      <ParallaxCards
+        cards={parallaxCards}
+        sectionLabel="The Exposure Process"
+      />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="border border-black/10 p-8 text-center">
-              <p className="text-xs uppercase tracking-[0.2em] text-black/50 font-sans mb-4">Highlight Only</p>
-              <p className="font-serif text-3xl font-bold text-black mb-2">Contact</p>
-              <p className="text-sm text-black/50 font-sans">Film editing package</p>
-            </div>
-            <div className="border-2 border-gold p-8 text-center relative">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-black text-[10px] uppercase tracking-wider font-semibold px-3 py-1">
-                Most Popular
-              </div>
-              <p className="text-xs uppercase tracking-[0.2em] text-black/50 font-sans mb-4">Full Exposure</p>
-              <p className="font-serif text-3xl font-bold text-black mb-2">Contact</p>
-              <p className="text-sm text-black/50 font-sans">Complete recruiting</p>
-            </div>
-            <div className="border border-black/10 p-8 text-center">
-              <p className="text-xs uppercase tracking-[0.2em] text-black/50 font-sans mb-4">Elite Package</p>
-              <p className="font-serif text-3xl font-bold text-black mb-2">Contact</p>
-              <p className="text-sm text-black/50 font-sans">Training + exposure</p>
-            </div>
-          </div>
+      <SpecSheet items={specItems} theme="light" />
 
-          <div className="mt-12 text-center">
-            <Link
-              href="/#intake"
-              className="inline-flex items-center gap-3 bg-black text-white text-xs uppercase tracking-[0.15em] font-semibold px-8 py-4 hover:bg-black/80 transition-colors group"
-            >
-              Request Highlight Assessment
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <PricingConfigurator
+        heading="Exposure Packages"
+        tiers={pricingTiers}
+        features={pricingFeatures}
+        ctaText="Request Highlight Assessment"
+        ctaLink="/#intake"
+        theme="dark"
+      />
     </>
   );
 }

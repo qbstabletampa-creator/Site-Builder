@@ -1,134 +1,138 @@
-import { Link } from "wouter";
-import { ArrowRight, Check } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
+import ProductTopBar from "@/components/product/ProductTopBar";
+import ProductHero from "@/components/product/ProductHero";
+import FeatureFlow from "@/components/product/FeatureFlow";
+import ParallaxCards from "@/components/product/ParallaxCards";
+import SpecSheet from "@/components/product/SpecSheet";
+import PricingConfigurator from "@/components/product/PricingConfigurator";
+
+const hudMetrics = [
+  { label: "Arm Slot Angle", value: "54.2", unit: "deg" },
+  { label: "Release Velocity", value: "61.8", unit: "mph" },
+  { label: "Footwork Efficiency", value: "94.1", unit: "%" },
+  { label: "Mechanical Consistency", value: "93", unit: "%" },
+];
 
 const features = [
   {
     title: "QB Academy",
-    description: "Our flagship group training program combines position-specific drills with cognitive processing exercises designed to elevate in-game decision making."
+    description:
+      "Our flagship group training program combines position-specific drills with cognitive processing exercises designed to elevate in-game decision making.",
+    metric: { value: "93%", label: "Rep Quality" },
   },
   {
     title: "1-on-1 & Elite Small Groups",
-    description: "Personalized sessions focused on individual development plans. Every rep is intentional, every correction is data-driven."
+    description:
+      "Personalized sessions focused on individual development plans. Every rep is intentional, every correction is data-driven.",
+    metric: { value: "2.4x", label: "Faster Growth" },
   },
   {
     title: "NFL Draft Prep",
-    description: "Comprehensive pre-draft preparation covering mechanics refinement, pro-day training, and mental preparation for the evaluation process."
+    description:
+      "Comprehensive pre-draft preparation covering mechanics refinement, pro-day training, and mental preparation for the evaluation process.",
+    metric: { value: "$53M+", label: "NFL Contracts" },
   },
   {
     title: "College & NFL Training",
-    description: "Off-season and in-season development for collegiate and professional quarterbacks. Maintaining the edge at the highest level."
+    description:
+      "Off-season and in-season development for collegiate and professional quarterbacks. Maintaining the edge at the highest level.",
+    metric: { value: "9", label: "NFL QBs Trained" },
   },
 ];
 
-const included = [
-  "Biomechanical Audit & Analysis",
-  "Weekly Film Review Sessions",
-  "Customized Development Plan",
-  "Progress Tracking & Reporting",
-  "Access to QB Network",
-  "Mental Performance Training",
+const mediaSlots = [
+  { label: "Training Session", sublabel: "Biomechanics Lab" },
+  { label: "Film Room", sublabel: "Decision Analysis" },
+  { label: "Pro Day", sublabel: "Draft Preparation" },
+  { label: "Game Reps", sublabel: "Live Performance" },
+];
+
+const parallaxCards = [
+  {
+    label: "Throwing Mechanics",
+    sublabel: "Kinetic Chain Analysis",
+    gradientFrom: "#1a1a0f",
+    gradientTo: "#0a0a05",
+  },
+  {
+    label: "Cognitive Training",
+    sublabel: "Processing Speed Drills",
+    gradientFrom: "#0f1a1a",
+    gradientTo: "#050a0a",
+  },
+  {
+    label: "Live Reps",
+    sublabel: "Game Simulation",
+    gradientFrom: "#1a0f1a",
+    gradientTo: "#0a050a",
+  },
+];
+
+const specItems = [
+  { label: "Biomechanical Audit & Analysis", detail: "Full kinetic chain breakdown" },
+  { label: "Weekly Film Review Sessions", detail: "1-on-1 with coaching staff" },
+  { label: "Customized Development Plan", detail: "Data-driven programming" },
+  { label: "Progress Tracking & Reporting", detail: "Monthly metric reports" },
+  { label: "Access to QB Network", detail: "Alumni & recruiting contacts" },
+  { label: "Mental Performance Training", detail: "Cognitive processing drills" },
+];
+
+const pricingTiers = [
+  { name: "Single Session", subtitle: "Per session rate", price: "Contact" },
+  { name: "Monthly Package", subtitle: "Best value", price: "Contact", popular: true },
+  { name: "Elite Package", subtitle: "Full development", price: "Contact" },
+];
+
+const pricingFeatures = [
+  { label: "Biomechanical Audit", tiers: [true, true, true] },
+  { label: "Weekly Film Review", tiers: [false, true, true] },
+  { label: "Custom Development Plan", tiers: [false, true, true] },
+  { label: "Progress Tracking", tiers: [false, true, true] },
+  { label: "QB Network Access", tiers: [false, false, true] },
+  { label: "Mental Performance Training", tiers: [false, false, true] },
+  { label: "Priority Scheduling", tiers: [false, false, true] },
 ];
 
 export default function Academy() {
   useSEO({
     title: "QB Academy | Elite Quarterback Training Programs — The QB Stable",
-    description: "Tampa's premier QB training programs: 1-on-1 sessions, elite small groups, NFL Draft prep, and college-level development. Science-driven methodology from first rep to first round.",
+    description:
+      "Tampa's premier QB training programs: 1-on-1 sessions, elite small groups, NFL Draft prep, and college-level development. Science-driven methodology from first rep to first round.",
   });
+
   return (
     <>
-      <section className="relative w-full min-h-[60vh] flex items-end bg-black pt-20">
-        <div className="absolute top-0 left-0 right-0 h-[3px] bg-gold" />
-        <div className="max-w-6xl mx-auto w-full px-6 md:px-10 pb-16 md:pb-24">
-          <p className="text-gold text-xs uppercase tracking-[0.3em] font-sans font-semibold mb-4">
-            Elite Development
-          </p>
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-            QB Academy
-          </h1>
-          <p className="mt-6 text-white/60 text-base md:text-lg max-w-2xl font-sans leading-relaxed">
-            The premier quarterback training program in Tampa, FL. Science-driven development from first rep to first round.
-          </p>
-        </div>
-      </section>
+      <ProductTopBar ctaLabel="Apply for Evaluation" />
 
-      <section className="w-full bg-white py-16 md:py-24 px-6 md:px-10">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-gold text-xs uppercase tracking-[0.3em] font-sans font-semibold mb-12">
-            Training Programs
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 border-t border-l border-black/10">
-            {features.map((feature) => (
-              <div key={feature.title} className="border-r border-b border-black/10 p-8 md:p-12">
-                <h3 className="font-serif text-xl md:text-2xl font-semibold text-black mb-4">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-black/60 leading-relaxed font-sans">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProductHero
+        eyebrow="Elite Development"
+        title="QB Academy"
+        description="The premier quarterback training program in Tampa, FL. Science-driven development from first rep to first round."
+        hudMetrics={hudMetrics}
+      />
 
-      <section className="w-full bg-black py-16 md:py-24 px-6 md:px-10">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-gold text-xs uppercase tracking-[0.3em] font-sans font-semibold mb-8 text-center">
-            What's Included
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {included.map((item) => (
-              <div key={item} className="flex items-center gap-3 py-3 border-b border-white/10">
-                <Check size={16} className="text-gold flex-shrink-0" />
-                <span className="text-white/80 text-sm font-sans">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FeatureFlow
+        sectionLabel="Training Programs"
+        features={features}
+        theme="light"
+        mediaSlots={mediaSlots}
+      />
 
-      <section className="w-full bg-white py-16 md:py-24 px-6 md:px-10">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-gold text-xs uppercase tracking-[0.3em] font-sans font-semibold mb-4 text-center">
-            Pricing
-          </p>
-          <h2 className="font-serif text-3xl md:text-4xl text-black text-center mb-12">
-            Investment in Excellence
-          </h2>
+      <ParallaxCards
+        cards={parallaxCards}
+        sectionLabel="Inside the Program"
+      />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="border border-black/10 p-8 text-center">
-              <p className="text-xs uppercase tracking-[0.2em] text-black/50 font-sans mb-4">Single Session</p>
-              <p className="font-serif text-3xl font-bold text-black mb-2">Contact</p>
-              <p className="text-sm text-black/50 font-sans">Per session rate</p>
-            </div>
-            <div className="border-2 border-gold p-8 text-center relative">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-black text-[10px] uppercase tracking-wider font-semibold px-3 py-1">
-                Most Popular
-              </div>
-              <p className="text-xs uppercase tracking-[0.2em] text-black/50 font-sans mb-4">Monthly Package</p>
-              <p className="font-serif text-3xl font-bold text-black mb-2">Contact</p>
-              <p className="text-sm text-black/50 font-sans">Best value</p>
-            </div>
-            <div className="border border-black/10 p-8 text-center">
-              <p className="text-xs uppercase tracking-[0.2em] text-black/50 font-sans mb-4">Elite Package</p>
-              <p className="font-serif text-3xl font-bold text-black mb-2">Contact</p>
-              <p className="text-sm text-black/50 font-sans">Full development</p>
-            </div>
-          </div>
+      <SpecSheet items={specItems} theme="light" />
 
-          <div className="mt-12 text-center">
-            <Link
-              href="/#intake"
-              className="inline-flex items-center gap-3 bg-black text-white text-xs uppercase tracking-[0.15em] font-semibold px-8 py-4 hover:bg-black/80 transition-colors group"
-            >
-              Apply for Evaluation
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <PricingConfigurator
+        heading="Investment in Excellence"
+        tiers={pricingTiers}
+        features={pricingFeatures}
+        ctaText="Apply for Evaluation"
+        ctaLink="/#intake"
+        theme="dark"
+      />
     </>
   );
 }

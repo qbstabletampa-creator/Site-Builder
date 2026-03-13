@@ -29,10 +29,21 @@ A high-performance quarterback training institution website. Brand: "technical l
 
 ### Pages
 - `/` — Homepage (Hero, Telemetry Bar with count-up, Alumni Ticker, Authority Statement, Services Grid, Stable Standard, Review Vault, FAQ + Intake Form)
-- `/academy` — Elite Development service page with pricing layout
-- `/exposure` — Collegiate Exposure service page with pricing layout
-- `/consulting` — Strategic Consulting service page with pricing layout
+- `/academy` — Elite Development service page (HUD hero, flowing features, parallax media, spec sheet, pricing configurator)
+- `/exposure` — Collegiate Exposure service page (HUD hero, flowing features, parallax media, spec sheet, pricing configurator)
+- `/consulting` — Strategic Consulting service page (HUD hero, flowing features, parallax media, spec sheet, pricing configurator)
 - `/faq` — Institutional deep-dive FAQ page
+
+### Shared Product Components (`src/components/product/`)
+- `ProductHero.tsx` — Full-bleed hero with HUD-style data overlay metrics and scroll-linked parallax
+- `HudOverlay.tsx` — Translucent metric readouts for hero sections (responsive: desktop side-panels, mobile bottom grid)
+- `FeatureFlow.tsx` — Anti-grid flowing feature layout with alternating alignment, metric badges, media placeholders
+- `ParallaxCards.tsx` — Scroll-driven parallax card section with staggered vertical offsets
+- `MediaPlaceholder.tsx` — Gradient-styled placeholder slots for future photography/video
+- `SpecSheet.tsx` — Technical specification sheet styled "What's Included" section
+- `PricingConfigurator.tsx` — Interactive tier selector with feature comparison matrix (Tesla/Eight Sleep style)
+- `ScrollReveal.tsx` — Framer Motion scroll-triggered reveal wrappers (ScrollReveal, StaggerContainer, StaggerItem)
+- `HoverCard.tsx` — Micro-interaction hover components (card lift/scale, gold glow)
 
 ### Key Components
 - `src/components/Navbar.tsx` — Sticky nav with mobile hamburger menu
