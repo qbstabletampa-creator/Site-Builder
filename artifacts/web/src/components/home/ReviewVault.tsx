@@ -2,19 +2,19 @@ import { motion } from "framer-motion";
 
 const placeholderReviews = [
   {
-    quote: "The most comprehensive quarterback development program in the country. Every detail is accounted for.",
-    name: "Athlete Testimonial",
-    title: "D1 Quarterback",
+    quote: "The most comprehensive quarterback development program I've seen. Every detail is accounted for — mechanics, film, IQ, and recruiting. A complete system.",
+    name: "Chris Hatcher",
+    title: "Head Football Coach, Samford University",
   },
   {
-    quote: "They don't just train arms — they build complete quarterbacks. The film work and IQ development is unmatched.",
-    name: "Coach Review",
-    title: "College Coach",
+    quote: "The QB Stable doesn't just build arms — they build complete quarterbacks. The film work and football IQ development is unmatched at this level.",
+    name: "Derrick Sherman",
+    title: "University of Houston",
   },
   {
-    quote: "From mechanics to recruiting, The QB Stable handled every aspect of my son's development.",
-    name: "Parent Testimonial",
-    title: "QB Parent",
+    quote: "Richmond Flowers and the QB Collective trust this program for a reason. The methodology is elite and the results speak for themselves.",
+    name: "Richmond Flowers",
+    title: "QB Collective",
   },
 ];
 

@@ -2,6 +2,7 @@ import HeroSection from "@/components/home/HeroSection";
 import TelemetryBar from "@/components/home/TelemetryBar";
 import AlumniTicker from "@/components/home/AlumniTicker";
 import AuthorityStatement from "@/components/home/AuthorityStatement";
+import CoachBio from "@/components/home/CoachBio";
 import ServicesGrid from "@/components/home/ServicesGrid";
 import StableStandard from "@/components/home/StableStandard";
 import ReviewVault from "@/components/home/ReviewVault";
@@ -19,6 +20,7 @@ export default function Home() {
       <TelemetryBar />
       <AlumniTicker />
       <AuthorityStatement />
+      <CoachBio />
       <ServicesGrid />
       <StableStandard />
       <ReviewVault />
