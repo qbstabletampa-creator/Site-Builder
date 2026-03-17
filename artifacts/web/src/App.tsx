@@ -9,15 +9,18 @@ import Academy from "@/pages/academy";
 import Exposure from "@/pages/exposure";
 import Consulting from "@/pages/consulting";
 import Faq from "@/pages/faq";
+import FlagLeague from "@/pages/flag-league";
 import NotFound from "@/pages/not-found";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
+import { trackPageView } from "@/lib/analytics";
 
 const queryClient = new QueryClient();
 
 function ScrollToTop() {
   const [location] = useLocation();
   useEffect(() => {
+    trackPageView(location);
     const hash = window.location.hash;
     if (hash) {
       const el = document.querySelector(hash);
@@ -41,6 +44,7 @@ function Router() {
         <Route path="/exposure" component={Exposure} />
         <Route path="/consulting" component={Consulting} />
         <Route path="/faq" component={Faq} />
+        <Route path="/flag-league" component={FlagLeague} />
         <Route component={NotFound} />
       </Switch>
     </>
