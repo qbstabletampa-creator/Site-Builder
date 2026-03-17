@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import { trackFormSubmission } from "@/lib/analytics";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Dialog,
@@ -46,8 +47,24 @@ async function submitApplication(data: {
   level: string;
   message: string;
 }) {
-  console.log("[WorkWithUs] Application submitted:", data);
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  const res = await fetch("/api/leads", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      organization: data.organization,
+      role: data.role,
+      level: data.level,
+      goals: data.goals,
+      message: data.message,
+    }),
+  });
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({})) as { error?: string };
+    throw new Error(body.error ?? "Submission failed. Please try again.");
+  }
   return { success: true };
 }
 
@@ -113,6 +130,7 @@ export default function WorkWithUsModal({ open, onOpenChange }: WorkWithUsModalP
       setSubmitting(true);
       try {
         await submitApplication({ role, goals: selectedGoals, ...formData });
+        trackFormSubmission({ role, goals: selectedGoals });
         setStep("confirmation");
       } finally {
         setSubmitting(false);

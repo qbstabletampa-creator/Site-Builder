@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: qb-stable-web
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: "npm install -g pnpm@10 && pnpm install --frozen-lockfile && PORT=3000 BASE_PATH=/ pnpm --filter @workspace/web run build && pnpm --filter @workspace/api-server run build"
+    startCommand: "node artifacts/api-server/dist/index.cjs"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "3000"
+      - key: LEADS_DIR
+        value: /var/data
+      - key: VITE_GA4_MEASUREMENT_ID
+        sync: false  # Set manually in Render dashboard
+    disk:
+      name: leads-data
+      mountPath: /var/data
+      sizeGB: 1
