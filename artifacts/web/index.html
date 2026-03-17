@@ -16,6 +16,83 @@
     <meta name="twitter:title" content="The QB Stable | Quarterback Training Tampa, FL" />
     <meta name="twitter:description" content="Beyond the throw. $53M+ in NFL contracts, 40+ D1 QBs. Tampa's premier quarterback development institution." />
 
+    <!-- Google Search Console verification — set VITE_GSC_VERIFICATION in .env to activate -->
+    <meta name="google-site-verification" content="%VITE_GSC_VERIFICATION%" />
+
+    <!-- Canonical URL — set VITE_SITE_URL in .env (e.g. https://theqbstable.com) -->
+    <link rel="canonical" href="%VITE_SITE_URL%/" />
+
+    <!-- LocalBusiness structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsActivityLocation",
+      "name": "The QB Stable",
+      "description": "Tampa's premier quarterback training institution. Elite development, collegiate exposure, and strategic consulting for high school and collegiate quarterbacks.",
+      "url": "%VITE_SITE_URL%",
+      "telephone": "",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tampa",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 27.9506,
+        "longitude": -82.4572
+      },
+      "image": "%VITE_SITE_URL%/opengraph.jpg",
+      "priceRange": "$$",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "QB Development Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QB Academy",
+              "description": "Flagship group quarterback training program combining position-specific drills with cognitive processing exercises."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "1-on-1 & Elite Small Groups",
+              "description": "Personalized quarterback sessions with individual development plans and data-driven corrections."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Collegiate Exposure",
+              "description": "Custom highlight reels, college coach database access, and recruiting evaluation for high school QBs."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Strategic Consulting",
+              "description": "Practice architecture audits and drill protocol design for coaches and programs."
+            }
+          }
+        ]
+      },
+      "knowsAbout": [
+        "Quarterback Training",
+        "QB Development",
+        "High School Quarterback Coaching",
+        "College Football Recruiting",
+        "NFL Draft Preparation",
+        "Quarterback Biomechanics"
+      ]
+    }
+    </script>
+
     <!-- Google Analytics 4 — set VITE_GA4_MEASUREMENT_ID in .env to activate -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=%VITE_GA4_MEASUREMENT_ID%"></script>
     <script>

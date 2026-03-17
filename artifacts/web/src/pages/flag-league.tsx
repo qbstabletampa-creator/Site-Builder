@@ -24,6 +24,7 @@ export default function FlagLeague() {
     title: "Register Now — Pinellas Park Flag Football League",
     description:
       "Sign up for the Pinellas Park Flag Football League starting April 24th. All ages welcome. Registration closes soon — secure your spot today!",
+    path: "/flag-league",
   });
 
   const [form, setForm] = useState({

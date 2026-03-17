@@ -98,6 +98,7 @@ export default function Academy() {
     title: "QB Academy | Elite Quarterback Training Programs — The QB Stable",
     description:
       "Tampa's premier QB training programs: 1-on-1 sessions, elite small groups, NFL Draft prep, and college-level development. Science-driven methodology from first rep to first round.",
+    path: "/academy",
   });
 
   return (

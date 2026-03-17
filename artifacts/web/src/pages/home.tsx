@@ -14,6 +14,7 @@ export default function Home() {
   useSEO({
     title: "The QB Stable | Quarterback Training Tampa, FL — Beyond the Throw",
     description: "The QB Stable is Tampa's premier quarterback training institution. $53M+ in NFL contracts, 40+ D1 QBs. Elite development, collegiate exposure, and strategic consulting.",
+    path: "/",
   });
   return (
     <>

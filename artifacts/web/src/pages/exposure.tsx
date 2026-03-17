@@ -98,6 +98,7 @@ export default function Exposure() {
     title: "Collegiate Exposure | QB Recruiting & Highlights — The QB Stable",
     description:
       "Custom highlight reels, college coach database access, recruiting evaluations, and NIL strategy. 40+ D1 QBs produced. Get seen by the right programs.",
+    path: "/exposure",
   });
 
   return (

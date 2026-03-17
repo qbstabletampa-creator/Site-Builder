@@ -98,6 +98,7 @@ export default function Consulting() {
     title: "Strategic Consulting | Practice Architecture & Drill Design — The QB Stable",
     description:
       "Quarterback biomechanics consulting and drill protocol design for coaches and programs. Indy architecture audits, reactive drill protocols, and custom program builds.",
+    path: "/consulting",
   });
 
   return (

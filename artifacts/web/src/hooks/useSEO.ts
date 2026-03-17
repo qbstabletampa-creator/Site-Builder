@@ -5,9 +5,10 @@ interface SEOProps {
   description: string;
   ogTitle?: string;
   ogDescription?: string;
+  path?: string; // e.g. "/academy" — used to set canonical URL
 }
 
-export function useSEO({ title, description, ogTitle, ogDescription }: SEOProps) {
+export function useSEO({ title, description, ogTitle, ogDescription, path }: SEOProps) {
   useEffect(() => {
     document.title = title;
 
@@ -26,5 +27,16 @@ export function useSEO({ title, description, ogTitle, ogDescription }: SEOProps)
     setMeta("property", "og:description", ogDescription || description);
     setMeta("name", "twitter:title", ogTitle || title);
     setMeta("name", "twitter:description", ogDescription || description);
-  }, [title, description, ogTitle, ogDescription]);
+
+    if (path !== undefined) {
+      const siteUrl = (import.meta.env.VITE_SITE_URL as string | undefined) ?? "";
+      let link = document.querySelector("link[rel='canonical']") as HTMLLinkElement | null;
+      if (!link) {
+        link = document.createElement("link");
+        link.setAttribute("rel", "canonical");
+        document.head.appendChild(link);
+      }
+      link.setAttribute("href", siteUrl + path);
+    }
+  }, [title, description, ogTitle, ogDescription, path]);
 }

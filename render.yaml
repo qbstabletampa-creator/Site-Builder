@@ -15,6 +15,10 @@ services:
         value: /var/data
       - key: VITE_GA4_MEASUREMENT_ID
         sync: false  # Set manually in Render dashboard
+      - key: VITE_SITE_URL
+        sync: false  # Set to the production domain, e.g. https://theqbstable.com
+      - key: VITE_GSC_VERIFICATION
+        sync: false  # Google Search Console meta tag verification code
     disk:
       name: leads-data
       mountPath: /var/data

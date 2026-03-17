@@ -130,6 +130,7 @@ export default function Faq() {
   useSEO({
     title: "FAQ | Quarterback Training Questions — The QB Stable",
     description: "Everything you need to know about The QB Stable: training methodology, age groups, recruiting services, consulting programs, location, and how to get started.",
+    path: "/faq",
   });
   return (
     <>
