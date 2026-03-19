@@ -1,0 +1,35 @@
+REPLIT 4.0 TASK: THE INSTITUTIONAL INTAKE HUB (KLAVIYO INTEGRATION)
+The Objective: Build a high-performance, multi-step intake component for the homepage. This should function as a "Lead Magnet" hub that segments users based on their specific needs before collecting data.
+UI/UX Aesthetic:
+• Style: 1px Vegas Gold (#C5B358) border, white background, black text.
+• Fonts: Playfair Display for Headers, Inter for descriptions and buttons.
+• Spacing: 40px internal padding.
+• The "Stable" Feel: Minimalist, data-driven, and authoritative.
+The Logic Flow (3-Step Interaction):
+Step 01: Segmenting (The "Identifier")
+• Headline: SELECT YOUR DEVELOPMENT VERTICAL
+• Instruction: Choose your path to access specific institutional intel.
+• Buttons (Full Width):
+1. [ ELITE TRAINING REQUEST ] -> (Leads to Training Hook)
+2. [ RECRUITING & EXPOSURE ] -> (Leads to Exposure Hook)
+3. [ COACHING CONSULTANCY ] -> (Leads to Coaching Hook)
+Step 02: The Dynamic Hook (Contact Collection)
+Based on the Step 01 choice, display one of these three frames:
+• Vertical 1 (Training):
+• Header: APPLY FOR EVALUATION
+• Copy: Submit your data to see if you qualify for our training academy. We don’t just ‘throw’; we architect elite development.
+• CTA Button: [ SUBMIT APPLICATION ]
+• Vertical 2 (Exposure):
+• Header: THE COLLEGE CONTACT CHEAT SHEET
+• Copy: The exact protocols used to bypass the 'Black Hole' of recruiting and get your film on a Power 5 board.
+• CTA Button: [ GET THE CHEAT SHEET ]
+• Vertical 3 (Coaching):
+• Header: THE 15-MINUTE INDY BLUEPRINT
+• Copy: A tactical breakdown of our pre-practice routine and a sample 15-minute Indy period designed for 3x more reactionary reps.
+• CTA Button: [ DOWNLOAD THE BLUEPRINT ]
+Step 03: The Confirmation
+• Copy: "Access Request Logged. Check your inbox to begin the protocol."
+• Action: Provide a link back to "THE SUNDAY NIGHT IQ" archives.
+Technical Integration Note:
+• Please create this as a clean React/HTML component with placeholder functions for API for my lead flow and automation.
+• Ensure the component is mobile responsive (Stacks to 1-column on mobile).

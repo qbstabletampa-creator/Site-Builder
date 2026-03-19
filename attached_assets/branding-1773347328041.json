@@ -1,0 +1,146 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "Helvetica Now Text",
+      "role": "body"
+    },
+    {
+      "family": "RolexFont-S",
+      "role": "unknown"
+    }
+  ],
+  "colors": {
+    "primary": "#127749",
+    "accent": "#3B3B3B",
+    "background": "#212121",
+    "textPrimary": "#212121",
+    "link": "#127749"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Helvetica Now Text",
+      "heading": "Helvetica Now Text"
+    },
+    "fontStacks": {
+      "heading": [
+        "Helvetica Now Text",
+        "Helvetica",
+        "Arial",
+        "sans-serif"
+      ],
+      "body": [
+        "Helvetica Now Text",
+        "Helvetica",
+        "Arial",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "RolexFont-S",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "16px",
+      "h2": "50px",
+      "body": "14px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "5px"
+  },
+  "components": {
+    "input": {
+      "background": "#373737",
+      "textColor": "#FFFFFF",
+      "borderColor": null,
+      "borderRadius": "30px",
+      "borderRadiusCorners": {
+        "topLeft": "30px",
+        "topRight": "30px",
+        "bottomRight": "30px",
+        "bottomLeft": "30px"
+      },
+      "shadow": "none"
+    },
+    "buttonPrimary": {
+      "background": "#3B3B3B",
+      "textColor": "#FFFFFF",
+      "borderRadius": "9999px",
+      "borderRadiusCorners": {
+        "topLeft": "9999px",
+        "topRight": "9999px",
+        "bottomRight": "9999px",
+        "bottomLeft": "9999px"
+      },
+      "shadow": "none"
+    },
+    "buttonSecondary": {
+      "background": "#F8F8F8",
+      "textColor": "#212121",
+      "borderRadius": "0px",
+      "borderRadiusCorners": {
+        "topLeft": "0px",
+        "topRight": "0px",
+        "bottomRight": "0px",
+        "bottomLeft": "0px"
+      },
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "logo": "File saved at: attached_assets/logo.svg",
+    "favicon": "File saved at: attached_assets/favicon.png",
+    "ogImage": null
+  },
+  "__llm_logo_reasoning": {
+    "selectedIndex": 0,
+    "reasoning": "Selected #7 because it is a visible, medium-sized logo located in the header area, which is typical for a brand logo. It matches the brand Rolex and is not a tiny UI icon.",
+    "confidence": 0.85,
+    "source": "llm"
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 0,
+      "text": "Learn more",
+      "reasoning": "Button #0 with text 'Learn more' has a neutral background color (#3B3B3B) and is more action-oriented compared to 'Languages'. It is likely intended to guide users to explore more about the brand or products, making it the primary CTA."
+    },
+    "secondary": {
+      "index": 1,
+      "text": "Languages",
+      "reasoning": "Button #1 with text 'Languages' has a light background color (#F8F8F8) and serves a supportive role, allowing users to change language settings. It is less prominent and action-oriented than 'Learn more'."
+    },
+    "confidence": 0.9
+  },
+  "personality": {
+    "tone": "professional",
+    "energy": "medium",
+    "targetAudience": "luxury watch enthusiasts"
+  },
+  "designSystem": {
+    "framework": "custom",
+    "componentLibrary": ""
+  },
+  "confidence": {
+    "buttons": 0.9,
+    "colors": 0.9,
+    "overall": 0.9
+  },
+  "__llm_metadata": {
+    "logoSelection": {
+      "llmCalled": true,
+      "llmSucceeded": true,
+      "finalSource": "llm",
+      "rawLogoSelection": {
+        "selectedLogoIndex": 7,
+        "selectedLogoReasoning": "Selected #7 because it is a visible, medium-sized logo located in the header area, which is typical for a brand logo. It matches the brand Rolex and is not a tiny UI icon.",
+        "confidence": 0.85
+      }
+    },
+    "buttonClassification": {
+      "llmCalled": true,
+      "llmSucceeded": true
+    }
+  }
+}

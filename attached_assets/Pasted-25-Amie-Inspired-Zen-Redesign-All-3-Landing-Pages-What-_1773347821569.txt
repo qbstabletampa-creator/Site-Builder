@@ -1,0 +1,63 @@
+25 - Amie-Inspired Zen Redesign — All 3 Landing Pages
+
+What & Why
+
+The three service landing pages (Academy, Exposure, Consulting) currently use rigid grid layouts with hard borders — a very 2010s boxy structure. The user wants to transform them with a "Hyper-Minimalist Zen" aesthetic inspired by Amie (amie.so), which features anti-grid fluid layouts and purposeful micro-interactions on every element. The existing elite black/white/gold color palette and Playfair Display + Inter typography stay — the change is in layout philosophy, motion, and feel.
+
+Design Reference: Amie (amie.so)
+
+Anti-Grid Layouts: Content flows organically rather than sitting in bordered boxes. Sections use generous whitespace, asymmetric text placement, staggered elements, and floating/overlapping composition instead of rigid columns with visible borders.
+Micro-Interactions: Every interactive element responds to hover with soft, purposeful animations — cards that subtly lift and scale, text that shifts, buttons with smooth state transitions. The site feels "alive" without being distracting.
+Fluid Sections: Content sections breathe — large padding, elements that feel placed by hand rather than snapped to a grid. Sections flow into each other with smooth scroll-triggered entrance animations.
+Brand Constraints (Keep These)
+
+Color palette: Black (#000000), White (#FFFFFF), Vegas Gold (#D4C36A / #C5B358)
+Fonts: Playfair Display for headings, Inter for body
+Premium, institutional, authoritative tone
+Each page keeps its unique content (different services, features, pricing tiers)
+Done looks like
+
+All three landing pages feel fluid, organic, and alive — no more bordered grid boxes
+Hovering over any card, button, or interactive element triggers a soft, purposeful animation (subtle scale, lift, glow, or shift)
+Sections use scroll-triggered entrance animations (Framer Motion) — elements fade/slide in as the user scrolls
+Feature sections use staggered, asymmetric layouts instead of rigid 2x2 bordered grids
+"What's Included" sections use a flowing list with animated check marks rather than a bordered grid
+Pricing cards have hover micro-interactions (lift, subtle shadow expansion, gold accent glow)
+CTAs have smooth hover transitions with scale and color shifts
+The overall feel is consistent across all three pages but each retains its unique content and subtle personality:
+Academy: athletic intensity, precision
+Exposure: opportunity, momentum
+Consulting: cerebral, strategic
+Fully responsive — fluid layouts adapt naturally to mobile without hard breakpoint jumps
+Page transitions and scroll feel smooth and intentional
+Media & Asset Requirements
+
+As each page is built, the executor must identify where real photos/videos/media would elevate the design and leave clearly labeled placeholder slots with specific descriptions of what the user should provide. At the end of the build, produce a Media Shot List as a code comment block at the top of each page file listing every media slot, what type of asset is needed (photo, video, headshot, logo, etc.), the recommended dimensions/aspect ratio, and a short description of the ideal content. Example entries:
+
+Academy Hero Background: 1920x1080 video or photo — QB training action shot, field setting, high intensity
+Academy Feature Card 1 Image: 800x600 photo — close-up of QB Academy group session, drills in progress
+Exposure Testimonial Headshot: 200x200 photo — player headshot for social proof
+This gives the user a concrete shopping list of exactly what media to capture or provide. Use tasteful placeholder treatments in the meantime (subtle gradient overlays, grain textures, or muted background patterns — not stock photo placeholders).
+
+Out of scope
+
+Homepage redesign (only the 3 service landing pages)
+Content changes (titles, descriptions, pricing tiers stay the same)
+Navigation or footer changes
+Backend or API changes
+Tasks
+
+Create shared animation utilities — Build a set of reusable Framer Motion animation variants and wrapper components for the Zen aesthetic: scroll-triggered fade-in, staggered children entrance, hover lift/scale for cards, hover glow for gold-accented elements, smooth button hover transitions. These will be shared across all three pages.
+Redesign Academy page layout — Replace the bordered 2x2 feature grid with a staggered, flowing layout (alternating full-width and offset cards, no visible borders). Restyle "What's Included" as a flowing animated checklist. Add hover micro-interactions to pricing cards (lift + shadow + subtle gold border glow). Wrap all sections in scroll-triggered entrance animations. Remove all hard border-based grid styling.
+Redesign Exposure page layout — Apply the same anti-grid treatment: flowing feature cards with staggered entrance animations, organic spacing, hover micro-interactions on all interactive elements. Keep Exposure-specific content. Ensure visual consistency with Academy while allowing subtle personality differences.
+Redesign Consulting page layout — Apply the same Zen treatment with Consulting-specific content. Same animation system, same fluid layout philosophy, same micro-interaction patterns.
+Hero section refinement for all 3 pages — Update each page's hero from the current static black box to a more dynamic, breathing hero: add a subtle gradient or grain texture overlay, scroll-parallax on the headline text, and a smooth fade-in entrance animation for the headline, subtitle, and label. Keep the black background and gold accent line.
+Polish and unify — Review all three pages together for consistency. Ensure animation timings, hover behaviors, spacing rhythm, and responsive breakpoints feel unified. Fine-tune mobile layouts so staggered elements stack gracefully.
+Relevant files
+
+artifacts/web/src/pages/academy.tsx
+artifacts/web/src/pages/exposure.tsx
+artifacts/web/src/pages/consulting.tsx
+artifacts/web/src/index.css
+artifacts/web/src/App.tsx
+artifacts/web/src/pages/home.tsx

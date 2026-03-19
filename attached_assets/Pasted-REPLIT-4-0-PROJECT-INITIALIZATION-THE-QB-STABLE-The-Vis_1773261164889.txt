@@ -1,0 +1,20 @@
+REPLIT 4.0 PROJECT INITIALIZATION: THE QB STABLE
+The Vision Statement:
+The QB Stable is a high-performance institution that treats quarterbacking as an architectural discipline rather than a sport. Our guiding principles are "Development is not an accident" and "Beyond the throw." We represent over $53M in NFL contracts and have a track record of consistent output for over a decade.
+The Brand Atmosphere:
+The site must feel like a Technical Lab mixed with a High-End Consulting Firm.
+• Minimalist & Disciplined: No clutter, no loud "salesy" graphics.
+• Authority-Driven: Every design choice should scream "The Standard."
+• Style: Blueprint-style lines (1px borders), technical HUD-style overlays, and a sophisticated color palette of Deep Black (#000000), Stark White (#FFFFFF), and Vegas Gold (#C5B358).
+The Functional Philosophy:
+• Science-First: We prioritize Neural Plasticity, Biomechanical Audits, and Eye-Discipline over "pretty" throws.
+• Comprehensive Lifecycle: We aren't just trainers; we handle film sessions, IQ training, recruiting management, and NIL consulting. This is the definition of "Beyond the throw."
+• Institutional Consistency: We have operated out of the same location for 5 years and have built the deepest QB network in the country (Collective, Hewlett, Hernandez, Maendler).
+Revenue & SEO Objectives:
+• Primary SEO Anchor: "Quarterback Training Tampa, FL" and "Florida QB Training."
+• Secondary SEO Targets: "Quarterback Drills," "Quarterback Highlights," "Quarterback Biomechanics," and "College Football Recruiting Services."
+• Conversion Goal: Drive high-intent athletes to three specific service landing pages (Academy, Exposure, Consulting) and ultimately to the Intake Application.
+Technical Specs for Design:
+• Font Pairing: Playfair Display (Institutional/High-Status Serif) for all headers and Inter (Clean/Technical Sans-Serif) for all data and body copy.
+• Layout Style: Use a 1px technical grid to separate sections. Headlines should be bold and authoritative.
+• Responsive Priority: Desktop must look like a professional dossier; Mobile must be a fast, high-conversion scrolling experience where the grid stacks from 2x2 to 1 column
